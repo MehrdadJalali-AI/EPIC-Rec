@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install ruff==0.17.5
+      - run: ruff check src tests
+
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "${{ matrix.python-version }}"}
+      - run: pip install -e ".[dev,prince]"
+      - name: Unit and integration tests (CPU, synthetic data)
+        run: pytest -q -m "not network"
+      - name: Demo
+        run: epic-rec demo --out results/demo
+      - name: Smoke experiment and report
+        env: {EPIC_WORKERS: "2"}
+        run: |
+          epic-rec pipeline --config configs/experiments/pipeline_smoke.yaml --n-boot 200
+          test -s results/synthetic/report/tables/feasibility_by_setting.csv
+      - uses: actions/upload-artifact@v4
+        if: matrix.python-version == '3.12'
+        with:
+          name: smoke-report
+          path: results/synthetic/report
