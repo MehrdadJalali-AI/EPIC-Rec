@@ -1,0 +1,26 @@
+# Last.fm (HetRec 2011, GroupLens) + Microsoft Satori knowledge graph, artist linkage released with KGCN.
+seed: 0
+dataset:
+  name: lastfm
+  raw_dir: data/raw
+  processed_dir: data/processed/lastfm
+  positive: {min_weight: 1}          # every listened artist is a positive interaction
+  require_kg_link: true
+  # only 22.8% of interactions involve one of the 3,846 linked artists (about 11 per user), so a 10/5 core
+  # would keep fewer than 200 items; 5/3 keeps 1,716 users and 1,286 artists
+  k_core: {min_user: 5, min_item: 3}
+  kg:
+    min_items_per_entity: 2
+    max_items_per_entity: null
+    min_links_per_relation: 20
+  split: {val_frac: 0.1, test_frac: 0.2, seed: 0}
+model:
+  path: models/lastfm/path_additive.npz
+  collaborative: true
+  bpr_samples: 150000
+  bpr_l2: 1.0e-5
+evaluation: {ks: [10, 20]}
+baselines:
+  itemknn_k: [null, 50, 200]
+  bprmf: {dim: 64, lr: 0.05, reg: 1.0e-4, max_epochs: 100, eval_every: 5, patience: 2}
+results_dir: results/lastfm

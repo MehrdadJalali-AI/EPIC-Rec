@@ -1,0 +1,25 @@
+# MovieLens-1M (GroupLens ratings) + Microsoft Satori knowledge graph, item linkage released with RippleNet.
+# See docs/data.md for provenance, checksums and every filter.
+seed: 0
+dataset:
+  name: movielens-1m
+  raw_dir: data/raw
+  processed_dir: data/processed/movielens-1m
+  positive: {min_rating: 4}          # explicit rating >= 4 is a positive interaction
+  require_kg_link: true              # keep only movies that have a Satori entity
+  k_core: {min_user: 10, min_item: 5}
+  kg:
+    min_items_per_entity: 2          # an entity shared by one item creates no item-entity-item path
+    max_items_per_entity: null
+    min_links_per_relation: 200
+  split: {val_frac: 0.1, test_frac: 0.2, seed: 0}
+model:
+  path: models/movielens-1m/path_additive.npz
+  collaborative: true
+  bpr_samples: 150000
+  bpr_l2: 1.0e-5
+evaluation: {ks: [10, 20]}
+baselines:
+  itemknn_k: [null, 50, 200]
+  bprmf: {dim: 64, lr: 0.05, reg: 1.0e-4, max_epochs: 100, eval_every: 5, patience: 2}
+results_dir: results/movielens-1m

@@ -1,0 +1,17 @@
+# CPU smoke test (about a minute): every method, every setting, enumeration cross-check, synthetic data.
+base: [../synthetic.yaml, _methods.yaml]
+experiment:
+  name: smoke
+  output_dir: results/synthetic/smoke
+  users_per_stratum: 3
+  user_seed: 0
+  K: [5, 10]
+  alpha: [0.5]
+  phi: [0.0]
+  eps: [1.0e-6]
+  ranks: [1, 2, 3, 5, 10]
+  settings: [A, B, C, A3]
+  time_limit: 10
+  hard_kill_grace: 20
+  enumerate_max: 12
+  workers: 2

@@ -1,0 +1,16 @@
+# List length sensitivity: K in {5, 10, 20}, exact solver only.
+base: ../movielens.yaml
+experiment:
+  name: k_sweep
+  output_dir: results/movielens-1m/k_sweep
+  users_per_stratum: 25
+  user_seed: 2
+  K: [5, 10, 20]
+  alpha: [0.5]
+  phi: [0.0]
+  eps: [1.0e-6]
+  ranks: all
+  settings: [A, B, C]
+  methods: [{name: exact}]
+  time_limit: 20
+  workers: 4

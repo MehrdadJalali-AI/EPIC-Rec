@@ -1,0 +1,18 @@
+# Main study: settings A, B, C (and the no-C2 ablation A3), every top-10 rank, all methods.
+base: [../lastfm.yaml, _methods.yaml]
+experiment:
+  name: main
+  output_dir: results/lastfm/main
+  users_per_stratum: 50
+  user_seed: 1
+  K: [10]
+  alpha: [0.5]
+  phi: [0.0]
+  eps: [1.0e-6]
+  ranks: all
+  settings: [A, B, C, A3]
+  time_limit: 20
+  hard_kill_grace: 40
+  enumerate_max: 0
+  diagnose: true
+  workers: 4

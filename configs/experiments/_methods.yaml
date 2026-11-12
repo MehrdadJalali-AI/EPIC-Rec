@@ -1,0 +1,14 @@
+# Method list shared by the main experiments. Every method is run on every pair and setting unless restricted.
+experiment:
+  methods:
+    - {name: exact}
+    - {name: greedy, criterion: violation}
+    - {name: greedy, criterion: margin}
+    - {name: greedy, criterion: target_score}
+    - {name: greedy, criterion: list_aware}
+    - {name: greedy, criterion: popularity}
+    - {name: greedy, criterion: random}
+    - {name: greedy, criterion: target_score, mode: c1_stop, settings: [B, C]}
+    - {name: beam, width: 5}
+    - {name: continuous, relaxation: sigmoid, init: attribution, repair: true}
+    - {name: continuous, relaxation: gumbel, init: attribution, repair: true}

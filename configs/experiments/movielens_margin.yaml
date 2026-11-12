@@ -1,0 +1,17 @@
+# Score-margin sensitivity (problem P_eps) and P versus P_eps on small domains solved by enumeration.
+base: ../movielens.yaml
+experiment:
+  name: margin
+  output_dir: results/movielens-1m/margin
+  users_per_stratum: 25
+  user_seed: 4
+  K: [10]
+  alpha: [0.5]
+  phi: [0.0]
+  eps: [1.0e-8, 1.0e-6, 1.0e-4]
+  ranks: all
+  settings: [A, B, C]
+  methods: [{name: exact}]
+  time_limit: 20
+  enumerate_max: 14
+  workers: 4

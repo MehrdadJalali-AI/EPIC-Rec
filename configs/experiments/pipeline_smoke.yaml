@@ -1,0 +1,4 @@
+# epic-rec pipeline --config configs/experiments/pipeline_smoke.yaml
+experiments: [smoke.yaml]
+baselines: true
+report_dir: results/synthetic/report

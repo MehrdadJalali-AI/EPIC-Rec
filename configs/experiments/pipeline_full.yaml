@@ -1,0 +1,12 @@
+# Full study (needs the raw data, see docs/data.md; several CPU-hours with 4 workers).
+experiments:
+  - movielens_main.yaml
+  - movielens_k_sweep.yaml
+  - movielens_threshold.yaml
+  - movielens_margin.yaml
+  - movielens_ablations.yaml
+  - lastfm_main.yaml
+  - movielens_prince.yaml
+  - lastfm_prince.yaml
+baselines: true
+report_dir: results/report

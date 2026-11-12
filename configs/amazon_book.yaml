@@ -1,0 +1,24 @@
+# Amazon-Book (KGAT release: interactions + KB4Rec Freebase linkage). Train and test files are merged and
+# re-split with the same per-user procedure as the other datasets.
+seed: 0
+dataset:
+  name: amazon-book
+  raw_dir: data/raw
+  processed_dir: data/processed/amazon-book
+  require_kg_link: true
+  k_core: {min_user: 20, min_item: 10}
+  kg:
+    min_items_per_entity: 2
+    max_items_per_entity: 1000       # very generic Freebase entities create quadratic numbers of paths
+    min_links_per_relation: 200
+  split: {val_frac: 0.1, test_frac: 0.2, seed: 0}
+model:
+  path: models/amazon-book/path_additive.npz
+  collaborative: true
+  bpr_samples: 150000
+  bpr_l2: 1.0e-5
+evaluation: {ks: [10, 20]}
+baselines:
+  itemknn_k: [null, 50, 200]
+  bprmf: {dim: 64, lr: 0.05, reg: 1.0e-4, max_epochs: 60, eval_every: 5, patience: 2}
+results_dir: results/amazon-book
