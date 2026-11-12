@@ -129,6 +129,11 @@ def add_entanglement_quartile(df: pd.DataFrame, col: str = "ent_shared_evidence_
     return df
 
 
+def _flag(col: pd.Series) -> pd.Series:
+    """Boolean column with missing values (constraint not evaluated) as False."""
+    return col.map(lambda v: bool(v) if v is not None and v == v else False).astype(bool)
+
+
 def exact_vs_approx(df: pd.DataFrame, bs: Bootstraps) -> pd.DataFrame:
     """Every non-exact method against the exact solver on the same pairs and setting."""
     ex = df[df.method == EXACT][PAIR + ["setting", "status", "size"]].rename(
@@ -137,9 +142,9 @@ def exact_vs_approx(df: pd.DataFrame, bs: Bootstraps) -> pd.DataFrame:
     out = []
     for key, g in ap.groupby(CONFIG + ["setting", "method"]):
         row = dict(zip(CONFIG + ["setting", "method"], key), pairs=len(g), users=g.user.nunique())
-        c1 = g.c1.fillna(False).astype(bool) & g.c1_margin.fillna(False).astype(bool)
-        c12 = c1 & g.c2.fillna(False).astype(bool) & g.c1_c2_margin.fillna(False).astype(bool)
-        c123 = c12 & g.c3.fillna(False).astype(bool)
+        c1 = _flag(g.c1) & _flag(g.c1_margin)
+        c12 = c1 & _flag(g.c2) & _flag(g.c1_c2_margin)
+        c123 = c12 & _flag(g.c3)
         row.update(_ci("success", bs.share(g, g.success.astype(bool))))
         row.update(_ci("c1", bs.share(g, c1)))
         row.update(_ci("c1_c2", bs.share(g, c12)))
