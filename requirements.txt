@@ -1,0 +1,13 @@
+# Runtime dependencies, pinned to the versions used for development and validation (Python 3.12).
+# highspy is pinned on purpose: HiGHS 1.16.0 was observed to hang on some EPIC-Rec models
+# (see docs/reproducibility.md); 1.15.1 solved the same models within their time limits.
+numpy==2.5.4
+scipy==1.18.1
+pandas==3.1.1
+matplotlib==3.11.2
+highspy==1.15.1
+pyyaml==6.0.3
+networkx==3.7
+# development
+pytest==9.2.0
+ruff==0.17.5

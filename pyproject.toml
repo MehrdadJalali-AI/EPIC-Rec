@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "epic-rec"
+version = "0.1.0"
+description = "EPIC-Rec: evidence-preserving counterfactual explanations for top-K graph recommendation"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Mehrdad Jalali" }]
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "scipy>=1.10",
+  "pandas>=2.0",
+  "matplotlib>=3.7",
+  "highspy==1.15.1",
+  "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "ruff>=0.5"]
+prince = ["networkx>=3.0"]
+
+[project.scripts]
+epic-rec = "epic_rec.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+  "network: needs internet access (skipped unless EPIC_REC_NETWORK_TESTS=1)",
+  "data: needs a prepared real dataset (skipped if missing)",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E741", "B905"]
+
+[tool.ruff.lint.per-file-ignores]
+"src/epic_rec/data/sources.py" = ["E501"]  # URLs and checksums

@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "EPIC-Rec: Evidence-Preserving Counterfactual Explanations for Top-K Graph Recommendation"
+type: software
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/MehrdadJalali-AI/EPIC-Rec"
+authors:
+  - family-names: Jalali
+    given-names: Mehrdad
+    affiliation: "SRH University of Applied Sciences Heidelberg"
+keywords:
+  - recommender systems
+  - counterfactual explanations
+  - knowledge graphs
+  - mixed-integer programming
