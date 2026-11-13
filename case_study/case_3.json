@@ -1,0 +1,119 @@
+{
+  "kind": "heuristic_failure",
+  "method": "greedy:margin:c1_stop",
+  "stored_in_main_run": false,
+  "note": "The stored main run recorded ranking-margin only in constrained mode, and C1-stop only for the target-score criterion. This block is a fresh call of greedy(), not a stored record.",
+  "user_id": 1098,
+  "target": {
+    "item_id": 497,
+    "title": "Die Hard (1988)",
+    "rank": 9
+  },
+  "mask": [
+    {
+      "item_id": 277,
+      "title": "Executive Decision (1996)",
+      "year": 1996
+    },
+    {
+      "item_id": 742,
+      "title": "Con Air (1997)",
+      "year": 1997
+    }
+  ],
+  "runtime_s": 0.0002,
+  "new_topk": [
+    {
+      "rank": 1,
+      "item_id": 331,
+      "title": "Terminator 2: Judgment Day (1991)",
+      "score": 5.812972
+    },
+    {
+      "rank": 2,
+      "item_id": 602,
+      "title": "Terminator, The (1984)",
+      "score": 5.303654
+    },
+    {
+      "rank": 3,
+      "item_id": 575,
+      "title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+      "score": 5.237678
+    },
+    {
+      "rank": 4,
+      "item_id": 631,
+      "title": "Indiana Jones and the Last Crusade (1989)",
+      "score": 5.204622
+    },
+    {
+      "rank": 5,
+      "item_id": 765,
+      "title": "Hunt for Red October, The (1990)",
+      "score": 5.197325
+    },
+    {
+      "rank": 6,
+      "item_id": 142,
+      "title": "Star Wars: Episode IV - A New Hope (1977)",
+      "score": 5.145782
+    },
+    {
+      "rank": 7,
+      "item_id": 216,
+      "title": "True Lies (1994)",
+      "score": 5.016259
+    },
+    {
+      "rank": 8,
+      "item_id": 948,
+      "title": "Lethal Weapon (1987)",
+      "score": 5.004867
+    },
+    {
+      "rank": 9,
+      "item_id": 577,
+      "title": "Raiders of the Lost Ark (1981)",
+      "score": 5.002725
+    },
+    {
+      "rank": 10,
+      "item_id": 585,
+      "title": "Star Wars: Episode VI - Return of the Jedi (1983)",
+      "score": 4.975037
+    }
+  ],
+  "entering": [
+    {
+      "rank": 9,
+      "item_id": 577,
+      "title": "Raiders of the Lost Ark (1981)",
+      "score": 5.002725
+    },
+    {
+      "rank": 10,
+      "item_id": 585,
+      "title": "Star Wars: Episode VI - Return of the Jedi (1983)",
+      "score": 4.975037
+    }
+  ],
+  "verifier_setting_A": {
+    "passed": true,
+    "c1": true
+  },
+  "verifier_setting_C": {
+    "passed": false,
+    "c1": true,
+    "c2": false,
+    "c3": true
+  },
+  "retained_dropped_from_list": [
+    {
+      "item_id": 659,
+      "title": "Die Hard 2 (1990)",
+      "year": 1990
+    }
+  ],
+  "retained_lost_all_evidence": []
+}
