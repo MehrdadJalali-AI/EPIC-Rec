@@ -1,75 +1,109 @@
-# EPIC-Rec: Evidence-Preserving Counterfactual Explanations for Top-K Graph Recommendation
+# EPIC-Rec
 
-EPIC-Rec answers a concrete question about a recommendation list:
+### Evidence-Preserving Counterfactual Explanations for Top-K Graph Recommendation
 
-> **What is the smallest set of a user's own past interactions that would have to be absent for one recommended
-> item to leave the top-K list — while every other recommended item stays, and keeps the evidence that supports
-> it?**
+**Remove one unwanted recommendation. Preserve the other items and their supporting evidence.**
 
-It computes the answer exactly (mixed-integer programming with HiGHS) or approximately (greedy, beam and
-continuous-mask search), verifies every answer independently, and certifies when no such answer exists.
+EPIC-Rec searches for the smallest permitted change to a user's interaction history that removes a selected recommendation while keeping the remaining top-K items and at least one qualifying evidence path for each of them.
 
-![EPIC-Rec workflow](docs/figures/workflow.png)
+![EPIC-Rec conceptual workflow: select an unwanted recommendation, find a minimal history edit, and verify target removal, list preservation and surviving evidence.](docs/figures/EPIC-Rec_ Evidence-preserving recommendation workflow.png)
 
-## Motivation
+*Conceptual illustration of fixed-model history masking. A successful result must pass all requested checks; some requests have no feasible solution, and others remain unresolved within the search budget.*
 
-Counterfactual explanations for recommenders usually ask what would make the top item change. In a deployed
-system, the more useful question is often narrower: a user wants one item gone, and the rest of the list — and
-the reasons shown for it — should not be disturbed. Removing the target alone (C1) can push other good items out
-of the list, and can delete the only evidence behind items that stay. EPIC-Rec makes these side effects explicit
-constraints and measures how often they can be satisfied, at what cost, and why they sometimes cannot.
+> **Research question:** Which of my past interactions would need to be absent for this item to stop being recommended, while the other recommendations and their evidence remain?
 
-## Problem
+## How it works
 
-For user `u` with history `H_u`, top-K list `L_u` and target `t ∈ L_u`, find a minimum mask `M ⊆ D_u(t) ⊆ H_u`
-(only the user's own interactions may be masked; scores are recomputed without retraining) such that
+| Step | What EPIC-Rec does | What the user receives |
+| --- | --- | --- |
+| **1. Select a target** | Takes a user, their original top-K list and one unwanted item. | A clearly defined recommendation to explain or change. |
+| **2. Find a minimal edit** | Searches over permitted interactions in that user's history, using exact optimization or approximate search. | A candidate set of interactions to mask. |
+| **3. Verify the outcome** | Recomputes scores and rankings and checks the requested preservation constraints. | A verified explanation, a solver-reported infeasibility result for the specified formulation, or an unresolved outcome. |
 
-* **C1 — target removal:** `t` is not in the top-K list after masking;
-* **C2 — list preservation:** every other item of `L_u` is still in the top-K list (one new item takes the
-  freed slot);
-* **C3 — evidence preservation:** every retained item keeps at least one qualifying, faithful evidence path
-  (a path whose contribution is at least `τ_j = max(α · strongest path, φ)` and whose removal lowers the item's
-  score by at least `φ`).
+The model weights remain fixed. Masking is a counterfactual input change; it does not delete the user's stored history or simulate retraining.
 
-| setting | constraints |
+## Why preservation matters
+
+Removing a target recommendation can also displace other items or erase the paths that supported them. EPIC-Rec makes these side effects explicit constraints.
+
+- **User control:** investigate how to remove one unwanted suggestion while retaining the others.
+- **Stable recommendations:** preserve membership of the remaining list; their order may change.
+- **Traceable evidence:** retain a qualifying original path for every preserved item.
+- **Auditable limits:** distinguish verified solutions, solver-reported infeasibility and unsuccessful searches.
+
+These are technical capabilities and intended applications. Improvements in user trust, satisfaction, engagement or conversion require separate user or online studies.
+
+## The three constraints
+
+For user `u`, history `H_u`, original top-K list `L_u` and target `t`, find a minimum mask `M ⊆ D_u(t) ⊆ H_u`:
+
+| Constraint | Requirement |
 | --- | --- |
-| A | C1 |
-| B | C1 + C2 |
-| C | C1 + C2 + C3 |
-| A3 (ablation without C2) | C1 + C3 |
+| **C1: Target removal** | The target is absent from the recomputed top-K list. |
+| **C2: List preservation** | All other original top-K items remain. Exactly one new item fills the target's place. |
+| **C3: Evidence preservation** | Each retained item keeps at least one qualifying original, score-contributing evidence path. |
 
-All orderings must hold with a configurable score margin `ε` (problem P_ε, default `1e-6`); every reported mask
-is also checked under exact ranking with id tie-break. The formal definitions, the MILP, the proofs behind its
-pruning rule and the approximate methods are in [docs/method.md](docs/method.md).
+`D_u(t)` restricts the mask to interactions supporting the target. Other users' interactions and knowledge-graph facts are not editable.
+
+On the additive path scorer, a surviving path has a fixed contribution. Evidence thresholds use `τ_j = max(α × strongest original path contribution, φ)`, with the configured score-drop check. Interpret evidence survival together with these thresholds; it is a statement about the model's computation, not a causal claim about the user's preferences.
+
+| Setting | Constraints | Purpose |
+| --- | --- | --- |
+| A | C1 | Remove the target. |
+| B | C1 + C2 | Also preserve the remaining list. |
+| C | C1 + C2 + C3 | Also preserve qualifying evidence. |
+| A3 | C1 + C3 | Measure evidence preservation without enforcing list preservation. |
+
+### Scope of exactness
+
+The MILP solves the margin formulation `P_ε` on the specified mask domain, with default `ε = 1e-6`. Returned masks are also checked against the original ranking rule, with item-ID tie-breaking.
+
+- An **optimal** result establishes a minimum under the solver's formulation and numerical settings.
+- A **feasible** result provides a verified mask without established minimum size.
+- An **infeasible** result applies to `P_ε` and `D_u(t)`; it does not automatically prove infeasibility for the original problem `P` or unrestricted history edits.
+- A **timeout** or approximate **not_found** result does not establish infeasibility.
+
+Rechecking a result with another configuration of the same solver is a numerical cross-check, not an independently verified mathematical certificate. Formal definitions and implementation details: [Method](docs/method.md).
 
 ## Installation
 
+Requires Python 3.10 or later. The supplied workflow runs on CPU.
+
 ```bash
-git clone https://github.com/MehrdadJalali-AI/EPIC-Rec.git && cd EPIC-Rec
-python -m venv .venv && source .venv/bin/activate          # Python >= 3.10
-pip install -r requirements.txt && pip install -e ".[dev,prince]"
+git clone https://github.com/MehrdadJalali-AI/EPIC-Rec.git
+cd EPIC-Rec
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+pip install -e ".[dev,prince]"
 ```
 
-CPU only. `highspy` is pinned to 1.15.1 (see [docs/reproducibility.md](docs/reproducibility.md)).
+On Windows, activate the environment with `.venv\Scripts\activate`.
+
+The supplied environment pins `highspy` to 1.15.1. See [Reproducibility](docs/reproducibility.md) for solver settings and environment details.
 
 ## Quick start
 
+Run a synthetic demonstration before downloading research datasets:
+
 ```bash
-epic-rec demo                       # synthetic data, seconds: trains a model, explains two targets under A, B, C
-pytest -q -m "not network"          # unit, regression and pipeline tests
-bash scripts/run_smoke.sh           # tests + demo + smoke experiment + report on synthetic data
+epic-rec demo
+pytest -q -m "not network"
+bash scripts/run_smoke.sh
 ```
 
-Explain one recommendation on real data:
+Prepare MovieLens and explain a recommendation:
 
 ```bash
 epic-rec download movielens-1m
 epic-rec prepare --config configs/movielens.yaml
-epic-rec train   --config configs/movielens.yaml          # backbone + accuracy baselines
+epic-rec train --config configs/movielens.yaml
 epic-rec explain --config configs/movielens.yaml --user 42 --rank 1 --setting A B C --out explanation.json
 ```
 
-From Python:
+Use a valid user ID from the processed dataset; `42` is an example.
+
+### Python example
 
 ```python
 from epic_rec.data import load_or_prepare
@@ -80,112 +114,107 @@ from epic_rec.utils.config import load_config
 
 cfg = load_config("configs/movielens.yaml")
 model = load_model(cfg, load_or_prepare(cfg))
+
 inst = ExplanationInstance(model, u=42, K=10, alpha=0.5)
-inst.set_target(int(inst.L[0]))                 # explain the removal of the rank-1 item
-e = explain(inst, "C", "exact")                 # or "beam", "greedy:violation", "continuous"
-print(e.summary())
+inst.set_target(int(inst.L[0]))
+
+explanation = explain(inst, "C", "exact")
+print(explanation.summary())
 ```
+
+## Understanding an explanation
+
+A successful setting-C explanation can be read as:
+
+> “Without these interactions, the selected item would leave your top-K recommendations. The other original items would remain, each with at least one qualifying original evidence path.”
+
+The JSON output records the request, method, status, masked interaction IDs, success flag and verification details. Verification includes the updated list, replacement item where applicable, list overlap, retained-item rank correlation and surviving evidence paths.
+
+Interpret statuses before interpreting the mask. Exact methods use `optimal`, `feasible`, `infeasible` or `timeout`; approximate methods use `found` or `not_found`. A bound may be available without a proven optimum. A diagnostic explanation of failure should not be treated as a complete infeasibility proof unless established by the method.
+
+See the [results schema](docs/results_schema.md) for field definitions.
 
 ## Datasets
 
-| dataset | interactions | knowledge graph | role |
+| Dataset | Interaction source | Knowledge-graph source | Role |
 | --- | --- | --- | --- |
-| MovieLens-1M | GroupLens | Microsoft Satori (RippleNet release) | main |
-| Last.fm (HetRec 2011) | GroupLens | Microsoft Satori (KGCN release) | second dataset |
-| Amazon-Book | KGAT release | Freebase (KB4Rec, KGAT release) | optional, larger |
-| synthetic | generated | generated | tests, CI, demo |
+| MovieLens-1M | GroupLens | Satori linkage from RippleNet | Main evaluation |
+| Last.fm / HetRec 2011 | GroupLens | Satori linkage from KGCN | Cross-domain evaluation |
+| Amazon-Book | KGAT release | Freebase-based KG from the release | Optional larger dataset; not evidence of completed evaluation |
+| Synthetic | Generated | Generated | Tests, CI and demonstration |
 
-No data are committed. `epic-rec download` fetches the files from their distributors at pinned commits and refuses
-any file whose SHA-256 differs from the recorded value. Filters, splits (70 / 10 / 20 per user, seeded) and
-leakage checks are documented in [docs/data.md](docs/data.md) and recorded in each processed dataset's manifest.
+Raw research datasets are not redistributed. Consult [Data preparation](docs/data.md) for source versions, licensing, checksums, filters, seeded 70/10/20 splits and leakage checks. Dataset manifests should accompany the processed outputs used in each experiment.
 
 ## Experiments
 
-Every experiment is a YAML config in `configs/experiments/`; runs are parallel, resumable and write one JSON line
-per (user, target, configuration, setting, method).
+Experiment configurations live in `configs/experiments/`. A configuration specifies an experiment; it does not by itself establish that the experiment has been completed.
 
-| config | question |
+| Configuration | Question |
 | --- | --- |
-| `movielens_main.yaml`, `lastfm_main.yaml` | feasibility and minimum mask size for A, B, C and A3; exact versus every approximate method |
-| `movielens_k_sweep.yaml` | K = 5, 10, 20 |
-| `movielens_threshold.yaml` | evidence threshold α ∈ {0.25, 0.5, 0.75, 1.0} |
-| `movielens_margin.yaml` | score margin ε ∈ {1e-8, 1e-6, 1e-4}; P versus P_ε by enumeration |
-| `movielens_ablations.yaml` | without C2 (A3), without C3 (B), without repair, random versus learned initialisation |
-| `movielens_prince.yaml`, `lastfm_prince.yaml` | PRINCE (official code) on its native PageRank recommender |
-| `smoke.yaml` | everything above in miniature, on synthetic data |
+| `movielens_main.yaml`, `lastfm_main.yaml` | Feasibility and mask size for A, B, C and A3; exact and approximate methods |
+| `movielens_k_sweep.yaml` | Effect of K = 5, 10, 20 |
+| `movielens_threshold.yaml` | Effect of α = 0.25, 0.5, 0.75, 1.0 |
+| `movielens_margin.yaml` | Effect of ε; comparison of P and P_ε by enumeration on small instances |
+| `movielens_ablations.yaml` | Constraint, repair and initialization ablations |
+| `movielens_prince.yaml`, `lastfm_prince.yaml` | PRINCE on its native PageRank recommender |
+| `smoke.yaml` | Small synthetic pipeline check |
 
 ```bash
-epic-rec run    --config configs/experiments/movielens_main.yaml      # EPIC_WORKERS=8 to parallelise
+epic-rec run --config configs/experiments/movielens_main.yaml
 epic-rec report results/movielens-1m results/lastfm --out results/report
-epic-rec pipeline --config configs/experiments/pipeline_full.yaml     # everything: train, run, report
+epic-rec pipeline --config configs/experiments/pipeline_full.yaml
 ```
 
-Any config key can be overridden: `--set experiment.time_limit=5 --set experiment.users_per_stratum=10`.
+Set `EPIC_WORKERS=8` to request parallel workers. Configuration overrides use `--set`, for example:
 
-## Output
-
-```
-results/<dataset>/accuracy.{json,csv}          Recall@10/20, NDCG@10/20 of the backbone and baselines
-results/<dataset>/<experiment>/records.jsonl   all outcomes (schema: docs/results_schema.md)
-results/report/tables/*.csv                    feasibility by setting / rank / history / entanglement, mask sizes,
-                                               paired size differences, exact vs approximate, evidence survival,
-                                               runtime, P vs P_eps, infeasibility causes, cross-dataset
-results/report/figures/*.{pdf,png}             the corresponding figures
+```bash
+epic-rec run --config configs/experiments/movielens_main.yaml --set experiment.time_limit=5 --set experiment.users_per_stratum=10
 ```
 
-Every table and figure is generated from the saved records; confidence intervals are 95 % user-level stratified
-cluster-bootstrap intervals, and every table states its numbers of pairs and users.
+### Results and reporting
 
-## Reading an explanation
+| Output | Contents |
+| --- | --- |
+| `results/<dataset>/accuracy.{json,csv}` | Recall and NDCG for the recommender and accuracy baselines |
+| `results/<dataset>/<experiment>/records.jsonl` | Per-instance outcomes, configurations and verification records |
+| `results/report/tables/` | Feasibility, mask sizes, paired costs, evidence, runtime and sensitivity tables |
+| `results/report/figures/` | Figures generated from the saved records |
 
-An `Explanation` (JSON via `--out`) contains the request (`user`, `target`, `rank`, `K`, `setting`), the solver
-`status` (`optimal`, `feasible` with a proven bound, `infeasible`, `timeout`; approximate methods `found` /
-`not_found`), the `mask` (item ids from the user's history), `success`, and a `verification` report: the new list,
-which item entered, list overlap, rank correlation of retained items, and for each retained item its surviving
-evidence paths with faithfulness checks. Read it as: *"without these interactions, the target would not be
-recommended; the other items would remain, each still supported by the listed paths."* For infeasible requests,
-`infeasibility` names the cause (for example, the target and a retained item depend on the same interactions).
-Field-by-field documentation: [docs/results_schema.md](docs/results_schema.md).
+Reports should state their denominator, sample size and filtering conditions. The evaluation uses 95% user-level stratified cluster-bootstrap intervals, keeping targets from the same user together. Conditional success among successful target removals must be distinguished from success across all evaluated pairs.
 
-## Baselines
+## Methods and comparisons
 
-In-house explainers (greedy variants, beam search, continuous masks with sigmoid or Gumbel relaxation, random and
-popularity controls) are named after what they do. Published methods are run only from their official code:
-PRINCE is run through an adapter on its native recommender; ACCENT, GREASE, CoSRec and CF-GNNExplainer could not
-be compared reliably, for reasons documented in [docs/baselines.md](docs/baselines.md). No result is reported for
-a method that was not run.
+EPIC-Rec includes MILP optimization with HiGHS and approximate searches using greedy orders, beam search and continuous masks with sigmoid or Gumbel relaxation. Random and popularity orders provide controls.
+
+The in-house methods are distinct from published explainers. The supplied baseline setup includes an adapter for official PRINCE code on its native recommender; comparisons across different recommenders must be interpreted separately from comparisons on a common backbone. Consult [Baseline documentation](docs/baselines.md) for execution status, source versions, adaptations and limitations involving ACCENT, GREASE, CoSRec and CF-GNNExplainer. Only completed, verified runs support empirical claims.
 
 ## Reproducibility
 
-Seeds are derived per purpose and per user, so results do not depend on the number of workers; downloads and
-processed data carry checksums and manifests; runs resume after interruption; every exact solve has a hard
-time limit. Details: [docs/reproducibility.md](docs/reproducibility.md).
+Use the recorded configurations, seeds, dependency versions, checksums and dataset manifests when reproducing a result. Preserve per-instance records and identify the repository commit associated with published tables and figures.
+
+Runtime reporting should include model construction, optimization, constraint generation, verification and any additional solver cross-checks. A configured solver limit is not necessarily a hard limit on the full pipeline.
+
+See [Reproducibility](docs/reproducibility.md) for worker seeding, resumable runs, solver settings and validation procedures.
 
 ## Limitations
 
-* The guarantees are for the path-additive recommender, whose scores decompose exactly into paths. Models without
-  such a decomposition (matrix factorisation, most GNNs) can be explained only approximately; C3 is then not
-  well defined.
-* Masks are counterfactual inputs to the deployed model (no retraining). They describe the model's dependence on
-  the history, not what a retrained model would do.
-* Exact solving is NP-hard in general; long histories or large K can hit the time limit. Such cases are reported
-  as `feasible` (with a bound) or `timeout`, never as solved.
-* Evidence is defined by thresholds (`α`, `φ`); conclusions about C3 should be read together with the threshold
-  sensitivity experiment.
-* Results are offline. Effects on user satisfaction or business metrics need online studies.
+- The exact formulation relies on an additive path scorer and frozen normalization. Other architectures require a suitable evidence definition and a different or approximate solution method.
+- Counterfactuals describe the fixed model's response to masking; they do not establish the outcome of retraining or real-world causal effects.
+- C2 preserves list membership, not necessarily ranks, scores or recommendation quality.
+- Feasibility depends on the mask domain, score margin and evidence thresholds.
+- Large instances may exceed the search budget. A verified feasible solution can still be useful even when its minimality is unresolved.
+- The workflow illustration is conceptual. It does not represent measured performance or an experimentally verified case study.
+- The reported research is offline; deployment and business outcomes need further evaluation.
 
-## Ethics and responsible use
+## Responsible use
 
-Explanations reveal which past interactions drive a recommendation. They are meant for the user concerned or for
-audits under appropriate access control, not for inferring sensitive attributes. The public datasets used here are
-anonymised research datasets distributed under their own terms; this repository does not redistribute them.
-Masks are hypothetical: EPIC-Rec never deletes data. A product feature built on it should make clear that an
-explanation describes the model's behaviour, not a judgement about the user. See also
-[docs/commercial.md](docs/commercial.md) for the product perspective.
+Explanations can expose sensitive interaction history. Use them for the user concerned or for authorized audits with appropriate access controls. Counterfactual masking is not data erasure, machine unlearning or a privacy guarantee.
+
+Dataset access and reuse remain subject to the original distributors' terms. A product interface should distinguish hypothetical edits from changes actually applied to a user's account. See [Product perspective](docs/commercial.md).
 
 ## Citation
 
-If you use this code, please cite it (see [CITATION.cff](CITATION.cff)):
+Use [CITATION.cff](CITATION.cff) for release-specific citation metadata. The software citation supplied with this project is:
 
 ```bibtex
 @software{jalali_epic_rec,
@@ -196,7 +225,6 @@ If you use this code, please cite it (see [CITATION.cff](CITATION.cff)):
 }
 ```
 
-## Licence
+## License
 
-Code: MIT ([LICENSE](LICENSE)). Datasets and third-party code remain under their own licences (see
-[docs/data.md](docs/data.md) and [docs/baselines.md](docs/baselines.md)).
+Project code: MIT, as specified in [LICENSE](LICENSE). Datasets and third-party implementations retain their own licenses; see [data](docs/data.md) and [baseline](docs/baselines.md) documentation.
