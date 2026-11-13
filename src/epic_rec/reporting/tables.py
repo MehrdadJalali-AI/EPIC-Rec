@@ -218,6 +218,17 @@ def infeasibility_causes(df: pd.DataFrame) -> pd.DataFrame:
     return t
 
 
+def certification(df: pd.DataFrame) -> pd.DataFrame:
+    """Outcomes of the independent certification of exact claims, by original and certified status."""
+    if "certification" not in df:
+        return pd.DataFrame()
+    ex = df[df.method == EXACT].copy()
+    ex["size_reduction"] = ex.original_size - ex["size"]
+    keys = CONFIG + ["setting", "original_status", "certification", "status"]
+    return ex.groupby(keys, dropna=False).agg(pairs=("user", "size"), size_reduction_max=("size_reduction", "max"),
+                                              certify_time_mean=("certify_time", "mean")).reset_index()
+
+
 def all_tables(df: pd.DataFrame, n_boot: int = 2000, seed: int = 0) -> dict[str, pd.DataFrame]:
     df = add_entanglement_quartile(df)
     bs = Bootstraps(df, n_boot=n_boot, seed=seed)
@@ -234,6 +245,7 @@ def all_tables(df: pd.DataFrame, n_boot: int = 2000, seed: int = 0) -> dict[str,
         "runtime_scalability": runtime(df),
         "p_vs_p_eps": semantics(df),
         "infeasibility_causes": infeasibility_causes(df),
+        "certification": certification(df),
         "cross_dataset": feasibility(df, bs)[CONFIG + ["setting", "pairs", "users", "mask_exists", "mask_exists_lo",
                                                        "mask_exists_hi", "infeasible", "timeout"]],
     }

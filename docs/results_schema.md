@@ -56,6 +56,11 @@ Verification summary: `c1`, `c2`, `c3`, `c1_margin`, `c1_c2_margin`, `passed_P`,
 `kendall`, `evidence_survival`, `surviving_paths_mean`, `strongest_min`, `decomposition_error`.
 Exact only, optional: `enum_P`, `enum_Peps` (enumerated optimum under P and P_ε, −1 = infeasible),
 `infeasibility_cause`, `certificates`, `evidence_blocking_items`.
+Exact only, certification (`docs/method.md`): `certification` (`confirmed` / `corrected` / `undecided` /
+`corrected_undecided` / `structural` / `not_applicable`), `original_status` and `original_size` (the uncertified
+solver claim), `certify_time` (s, not included in `runtime`). `status`, `size`, `mask`, `bound`, `gap` and the
+verification summary are the certified values. `epic-rec certify` keeps the uncertified file as
+`records.uncertified.jsonl`.
 
 ## Tables (`epic-rec report`)
 
@@ -74,6 +79,7 @@ move together).
 | `runtime_scalability.csv` | exact-solve runtime and timeouts by mask-domain size |
 | `p_vs_p_eps.csv` | P versus P_ε on enumerated pairs; MILP agreement with enumeration |
 | `infeasibility_causes.csv` | causes of infeasibility per setting |
+| `certification.csv` | certification outcomes of exact claims by original and certified status, largest size reduction |
 | `cross_dataset.csv` | mask existence per dataset and setting |
 
 Sensitivity analyses (K, α, φ, ε) and ablations are rows of the same tables, distinguished by the `experiment`,

@@ -14,6 +14,7 @@ from __future__ import annotations
 import json
 import multiprocessing as mp
 import os
+import shutil
 import time
 from pathlib import Path
 from typing import Any
@@ -22,6 +23,7 @@ import numpy as np
 
 from epic_rec.evaluation.verify import verify
 from epic_rec.explainers.api import explain
+from epic_rec.optimization.certify import certify_isolated
 from epic_rec.optimization.diagnose import infeasibility_report
 from epic_rec.optimization.exhaustive import exhaustive
 from epic_rec.optimization.instance import ExplanationInstance, get_setting
@@ -32,6 +34,7 @@ from epic_rec.utils.seeding import rng_for
 log = get_logger(__name__)
 _MODEL: Any = None
 _CFG: dict = {}
+_CERT_FIELDS = ("certification", "original_status", "original_size", "certify_time")
 
 
 def method_id(spec: dict) -> str:
@@ -116,7 +119,7 @@ def run_job(job: tuple) -> list[dict]:
                     rng = rng_for(cfg.get("seed", 0), "method", mid, u, t, st.name)
                     if name == "exact":
                         e = explain(inst, st, "exact", eps=eps, time_limit=tl, isolate=True, diagnose=False,
-                                    evidence=True)
+                                    evidence=True, certify_limit=float(ex.get("certify_time_limit", 60.0)))
                         exact_status[st.name] = e.status
                     else:
                         kw = {k: v for k, v in kw.items() if k != "settings"}
@@ -129,6 +132,9 @@ def run_job(job: tuple) -> list[dict]:
                     if "details" in e.details:
                         rec["method_details"] = e.details["details"]
                     if name == "exact":
+                        if "certification" in e.details:
+                            rec.update({k: e.details[k] for k in _CERT_FIELDS})
+                            rec["certify_time"] = round(rec["certify_time"], 4)
                         if enum_max and len(inst.scope) <= enum_max:
                             for sem, mg in (("P", 0.0), ("Peps", eps)):
                                 r = exhaustive(inst, st, enum_max, margin=mg)
@@ -231,6 +237,116 @@ def run_prince(cfg: dict, ds: Any) -> Path:
             writer.write([r])
             log.info("PRINCE user %d: found=%s |M|=%s (%.1fs)", u, r["found"], r.get("size"), r["runtime"])
     return out / "prince_records.jsonl"
+
+
+def _certify_group(recs: list[dict], scope: str, time_limit: float) -> list[dict]:
+    """Certify the exact records of one (user, K, alpha, phi) job; returns the updated records."""
+    r0 = recs[0]
+    inst = ExplanationInstance(_MODEL, r0["user"], K=r0["K"], alpha=r0["alpha"], phi=r0["phi"], scope=scope)
+    out = []
+    for r in recs:
+        r = dict(r)
+        inst.set_target(r["target"])
+        st = get_setting(r["setting"])
+        raw = dict(status=r["status"], size=r["size"], mask=r["mask"], bound=r["bound"], gap=r["gap"],
+                   iterations=r.get("iterations"))
+        c = certify_isolated(inst, st, raw, eps=r["eps"], time_limit=time_limit)
+        r.update({k: c[k] for k in _CERT_FIELDS})
+        r["certify_time"] = round(r["certify_time"], 4)
+        changed = c["mask"] != r["mask"]
+        r.update(status=c["status"], size=c["size"], mask=c["mask"], bound=c["bound"], gap=c["gap"])
+        if changed:
+            ver = verify(inst, c["mask"], st, eps=r["eps"], with_evidence=True) if c["mask"] is not None else None
+            r.update(_summarise_ver(ver), success=bool(ver and ver["passed"]))
+            if ver is not None and not ver["passed"]:
+                r["status"] = "verification_failed"
+        if r["status"] != "infeasible":
+            for k in ("infeasibility_cause", "certificates", "evidence_blocking_items"):
+                r.pop(k, None)
+        out.append(r)
+    return out
+
+
+def _certify_worker(recs: list[dict], scope: str, time_limit: float, path: str) -> None:
+    out = _certify_group(recs, scope, time_limit)
+    with open(path + ".part", "w") as f:
+        f.write("".join(dumps(r) + "\n" for r in out))
+    os.replace(path + ".part", path)
+
+
+def certify_stored(out_dir: str | Path, cfg: dict, model: Any, workers: int = 1, time_limit: float = 60.0) -> dict:
+    """Certify the stored exact optimality and infeasibility claims of an experiment in place.
+
+    Records that already carry a ``certification`` field are left as they are. The uncertified file is kept as
+    ``records.uncertified.jsonl``; partial results are kept in ``certify_tmp/`` so an interrupted run resumes.
+    Returns the counts of the certification outcomes."""
+    global _MODEL
+    _MODEL = model
+    out_dir = Path(out_dir)
+    path = out_dir / "records.jsonl"
+    with open(path) as f:
+        records = [json.loads(line) for line in f if line.strip()]
+    backup = out_dir / "records.uncertified.jsonl"
+    if not backup.exists():
+        shutil.copy2(path, backup)
+    scope = cfg["experiment"].get("scope", "target")
+    groups: dict[tuple, list[int]] = {}
+    for k, r in enumerate(records):
+        if r["method"] == "exact" and "certification" not in r:
+            groups.setdefault((r["user"], r["K"], r["alpha"], r["phi"]), []).append(k)
+    tmpdir = out_dir / "certify_tmp"
+    tmpdir.mkdir(exist_ok=True)
+    todo = []
+    for key, idx in groups.items():
+        fn = str(tmpdir / ("cert_" + "_".join(map(str, key)) + ".jsonl"))
+        if not os.path.exists(fn):
+            todo.append((key, idx, fn))
+    log.info("%s: certifying %d exact records in %d jobs (%d jobs already done)", out_dir,
+             sum(len(i) for i in groups.values()), len(todo), len(groups) - len(todo))
+    t0 = time.time()
+    if workers <= 1 or "fork" not in mp.get_all_start_methods():
+        for n, (_, idx, fn) in enumerate(todo, 1):
+            _certify_worker([records[k] for k in idx], scope, time_limit, fn)
+            log.info("%d/%d certification jobs done (%.0fs)", n, len(todo), time.time() - t0)
+    else:
+        ctx = mp.get_context("fork")
+        running: dict[Any, str] = {}
+        queue = list(todo)
+        n = 0
+        while queue or running:
+            while queue and len(running) < workers:
+                _, idx, fn = queue.pop(0)
+                p = ctx.Process(target=_certify_worker, args=([records[k] for k in idx], scope, time_limit, fn))
+                p.start()
+                running[p] = fn
+            time.sleep(0.05)
+            for p in list(running):
+                if not p.is_alive():
+                    running.pop(p)
+                    p.join()
+                    n += 1
+                    if n % 50 == 0 or n == len(todo):
+                        log.info("%d/%d certification jobs done (%.0fs)", n, len(todo), time.time() - t0)
+    for key, idx in groups.items():
+        fn = tmpdir / ("cert_" + "_".join(map(str, key)) + ".jsonl")
+        if not fn.exists():
+            raise RuntimeError(f"certification job {key} failed; rerun to resume")
+        with open(fn) as f:
+            new = [json.loads(line) for line in f if line.strip()]
+        for k, r in zip(idx, new, strict=True):
+            records[k] = r
+    tmp = path.with_suffix(".jsonl.part")
+    with open(tmp, "w") as f:
+        f.write("".join(dumps(r) + "\n" for r in records))
+    os.replace(tmp, path)
+    for fn in tmpdir.iterdir():
+        fn.unlink()
+    tmpdir.rmdir()
+    counts: dict[str, int] = {}
+    for r in records:
+        if r["method"] == "exact":
+            counts[r.get("certification", "none")] = counts.get(r.get("certification", "none"), 0) + 1
+    return counts
 
 
 def verify_records(records: list[dict], cfg: dict, model: Any) -> int:

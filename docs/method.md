@@ -112,6 +112,16 @@ linear in `m`, so every required ordering is a linear row.
   recorded as `timeout` with `killed = true`.
 * Masks returned by HiGHS are re-checked in NumPy (gaps `≥ ε − 1e-9`, the solver's feasibility tolerance) and
   then verified independently.
+* **Certification** (`epic_rec.optimization.certify`). Optimality and infeasibility claims rest on a single
+  branch-and-bound run, and on one MovieLens pair the study configuration (presolve off for B / C, feasibility
+  tolerances 1e-9) reported a non-minimal mask as optimal. Every claim is therefore re-solved under a second HiGHS
+  configuration (presolve on, primal tolerance 1e-7, MIP tolerance 1e-6), 60 s per solve, on the model that would
+  refute it: an optimum of size k is re-solved with `|M| ≤ k − 1`, an infeasibility claim without a size cap.
+  Infeasible → `confirmed`. A returned mask replaces the result only after passing the independent verifier, and the
+  new size is certified again (`corrected`). Anything else → `undecided`, and the result is downgraded (optimum to
+  `feasible`, infeasibility to `timeout`). Size-0 optima and infeasibility found by the structural pre-checks
+  involve no search (`structural`). The problem definitions are unchanged; certification only checks the solver.
+  `epic-rec certify` applies the same procedure to stored records.
 
 For infeasible instances, `infeasibility_report` names the cause (C1 unreachable, list entanglement, evidence
 entanglement, evidence-free item, joint conflict) by solving the weaker settings, and lists certificates, the

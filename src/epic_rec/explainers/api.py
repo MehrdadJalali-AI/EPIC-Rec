@@ -17,6 +17,7 @@ from epic_rec.evaluation.verify import verify
 from epic_rec.explainers.beam import beam_search
 from epic_rec.explainers.continuous import continuous_mask
 from epic_rec.explainers.greedy import greedy
+from epic_rec.optimization.certify import certify, certify_isolated
 from epic_rec.optimization.diagnose import infeasibility_report
 from epic_rec.optimization.instance import EPS, ExplanationInstance, Setting, get_setting
 from epic_rec.optimization.isolated import run_isolated
@@ -97,11 +98,15 @@ def _finish(inst: ExplanationInstance, st: Setting, method: str, eps: float, raw
 
 def explain(inst: ExplanationInstance, setting: str | Setting = "C", method: str = "exact", eps: float = EPS,
             time_limit: float = 20.0, isolate: bool = False, diagnose: bool = True, evidence: bool = True,
-            rng: np.random.Generator | None = None, **kwargs: Any) -> Explanation:
+            rng: np.random.Generator | None = None, certify_limit: float | None = 60.0,
+            **kwargs: Any) -> Explanation:
     """Explain the instance's current target (``inst.set_target`` must have been called).
 
     method: ``exact`` (MILP), ``beam``, ``greedy:<criterion>[:c1_stop]``, ``continuous`` (keyword arguments are
     passed on, e.g. ``init``, ``relaxation``, ``repair``).
+    certify_limit: time limit per solve of the independent certification of exact optimality and infeasibility
+    claims (:mod:`epic_rec.optimization.certify`); None or 0 skips it. ``runtime`` excludes certification, whose
+    time is reported in ``details["certify_time"]``.
     """
     st = get_setting(setting)
     t0 = time.time()
@@ -111,7 +116,13 @@ def explain(inst: ExplanationInstance, setting: str | Setting = "C", method: str
                                **kwargs)
         else:
             raw = solve_milp(inst, st, eps=eps, time_limit=time_limit, **kwargs)
+        if certify_limit:
+            if isolate:
+                raw = certify_isolated(inst, st, raw, eps=eps, time_limit=certify_limit)
+            else:
+                raw = certify(inst, st, raw, eps=eps, time_limit=certify_limit)
         ex = _finish(inst, st, method, eps, raw, t0, exact=True, evidence=evidence)
+        ex.runtime -= raw.get("certify_time", 0.0)
         if raw["status"] == "infeasible" and diagnose:
             ex.infeasibility = infeasibility_report(inst, st, eps=eps, time_limit=time_limit)
         return ex

@@ -9,6 +9,7 @@ explain   explain one (user, target) and print or save the verified explanation 
 run       run (or resume) an experiment config; writes records.jsonl
 prince    run the PRINCE baseline (official code) on its native PPR recommender
 report    build CSV tables and PDF/PNG figures from saved records
+certify   independently re-check the stored exact optimality and infeasibility claims of experiments
 demo      end-to-end example on the synthetic dataset (CPU, about a minute)
 pipeline  prepare, train, run and report for every experiment listed in a pipeline config
 """
@@ -111,6 +112,21 @@ def cmd_report(a: argparse.Namespace) -> None:
     atomic_write_json(out / "report_manifest.json", dict(records=[str(f) for f in files], rows=len(df),
                                                          n_boot=a.n_boot, outputs=[str(p) for p in paths]))
     print(f"{len(df)} records from {len(files)} files -> {len(paths)} outputs in {out}")
+
+
+def cmd_certify(a: argparse.Namespace) -> None:
+    from epic_rec.data.preprocess import load_or_prepare
+    from epic_rec.experiments.runner import certify_stored
+    from epic_rec.experiments.training import load_model
+
+    models: dict = {}
+    for d in a.results:
+        cfg = json.loads((Path(d) / "sample.json").read_text())["config"]
+        key = json.dumps({k: cfg.get(k) for k in ("dataset", "model", "seed")}, sort_keys=True, default=str)
+        if key not in models:
+            models[key] = load_model(cfg, load_or_prepare(cfg))
+        counts = certify_stored(d, cfg, models[key], workers=a.workers, time_limit=a.time_limit)
+        print(f"{d}: {counts}")
 
 
 def cmd_demo(a: argparse.Namespace) -> None:
@@ -218,6 +234,11 @@ def build_parser() -> argparse.ArgumentParser:
     s.add_argument("--n-boot", type=int, default=2000)
     s.add_argument("--seed", type=int, default=0)
     s.set_defaults(fn=cmd_report)
+    s = sub.add_parser("certify", help="independently certify stored exact optimality and infeasibility claims")
+    s.add_argument("results", nargs="+", help="experiment directories (records.jsonl and sample.json)")
+    s.add_argument("--time-limit", type=float, default=60.0, help="seconds per certification solve")
+    s.add_argument("--workers", type=int, default=1)
+    s.set_defaults(fn=cmd_certify)
     s = sub.add_parser("demo", help="synthetic end-to-end example")
     s.add_argument("--out", default="results/demo")
     s.add_argument("--K", type=int, default=10)

@@ -57,7 +57,8 @@ def replacement_candidates(inst: ExplanationInstance, lb: np.ndarray, eps: float
 
 
 class _Model:
-    def __init__(self, n: int, time_limit: float, presolve: str, threads: int = 1):
+    def __init__(self, n: int, time_limit: float, presolve: str, threads: int = 1, primal_tol: float = FEAS_TOL,
+                 mip_tol: float = FEAS_TOL, max_size: int | None = None):
         self.h = highspy.Highs()
         self.h.setOptionValue("output_flag", False)
         self.h.setOptionValue("time_limit", float(max(time_limit, 0.01)))
@@ -65,11 +66,13 @@ class _Model:
         self.h.setOptionValue("presolve", presolve)
         self.h.setOptionValue("mip_rel_gap", 0.0)
         self.h.setOptionValue("mip_abs_gap", 0.999)  # the objective is integer
-        self.h.setOptionValue("primal_feasibility_tolerance", 1e-9)
-        self.h.setOptionValue("mip_feasibility_tolerance", 1e-9)
+        self.h.setOptionValue("primal_feasibility_tolerance", primal_tol)
+        self.h.setOptionValue("mip_feasibility_tolerance", mip_tol)
         self.nv = 0
         for _ in range(n):
             self.binary(1.0)
+        if max_size is not None and n:
+            self.row(-highspy.kHighsInf, float(max_size), list(range(n)), [1.0] * n)
 
     def binary(self, cost: float = 0.0) -> int:
         self.h.addVar(0, 1)
@@ -94,12 +97,19 @@ class _Model:
 
 
 def solve_milp(inst: ExplanationInstance, setting: str | Setting, eps: float = EPS, time_limit: float = 20.0,
-               prune: bool = True, threat_init: int = THREAT_INIT, threads: int = 1) -> dict[str, Any]:
+               prune: bool = True, threat_init: int = THREAT_INIT, threads: int = 1, presolve: str = "off",
+               primal_tol: float = FEAS_TOL, mip_tol: float = FEAS_TOL, max_size: int | None = None
+               ) -> dict[str, Any]:
     """Minimum |M| with M subset of D_u(t) for P_eps. Returns a dict with status, size, mask (item ids), bound,
-    gap, time, iterations and the number of generated threat outsiders."""
+    gap, time, iterations and the number of generated threat outsiders.
+
+    ``presolve``, ``primal_tol`` and ``mip_tol`` set the HiGHS configuration (the defaults are the study's);
+    ``max_size`` adds |M| <= max_size, so 'infeasible' then means that no mask of that size exists. The second
+    configuration used by :mod:`epic_rec.optimization.certify` is presolve on with HiGHS's standard tolerances."""
     if eps <= 0:
         raise ValueError("the MILP needs eps > 0; problem P (eps = 0) is checked by verification and enumeration")
     st = get_setting(setting)
+    opts = dict(primal_tol=primal_tol, mip_tol=mip_tol, max_size=max_size)
     t0 = time.time()
     t, sc, s = inst.t, inst.scope, inst.s
     n = len(sc)
@@ -165,7 +175,7 @@ def solve_milp(inst: ExplanationInstance, setting: str | Setting, eps: float = E
         cand = others[(s[others] >= lb[t] + eps) & (lb[others] < s[t] + eps)]
         if len(cand) < need:
             return out("infeasible")
-        m = _Model(n, remaining(), "on", threads)
+        m = _Model(n, remaining(), "on", threads, **opts)
         ys = []
         for c in cand:
             y = m.binary()
@@ -197,7 +207,7 @@ def solve_milp(inst: ExplanationInstance, setting: str | Setting, eps: float = E
     while True:
         if remaining() <= 0:
             return out("timeout")
-        m = _Model(n, remaining(), "off", threads)
+        m = _Model(n, remaining(), presolve, threads, **opts)
         state["iters"] += 1
         state["threats"] = len(threat)
         z: dict[int, int] = {}
