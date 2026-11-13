@@ -8,6 +8,9 @@ __pycache__/
 .ipynb_checkpoints/
 .DS_Store
 
+# manuscript sources and PDFs stay on this machine and are never pushed
+/manuscript/
+
 # data: never committed (see docs/data.md for download instructions)
 data/*
 !data/README.md
@@ -16,3 +19,10 @@ data/*
 /models/
 results/*
 !results/README.md
+# Aggregated tables and compact exact statuses are the manuscript's inputs.
+!results/report/
+!results/report/report_manifest.json
+!results/report/tables/
+!results/report/tables/**
+!results/published/
+!results/published/**

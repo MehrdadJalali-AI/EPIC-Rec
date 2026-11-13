@@ -1,0 +1,10 @@
+dataset,experiment,K,alpha,phi,eps,setting,pairs,users,status_differs,feasible_only_in_P,optimum_differs,milp_decided,milp_agrees
+movielens-1m,margin,10,0.5,0,1e-08,A,190,19,0,0,0,190,190
+movielens-1m,margin,10,0.5,0,1e-08,B,190,19,0,0,0,190,190
+movielens-1m,margin,10,0.5,0,1e-08,C,190,19,0,0,0,190,190
+movielens-1m,margin,10,0.5,0,1e-06,A,190,19,0,0,0,190,190
+movielens-1m,margin,10,0.5,0,1e-06,B,190,19,0,0,0,190,190
+movielens-1m,margin,10,0.5,0,1e-06,C,190,19,0,0,0,190,190
+movielens-1m,margin,10,0.5,0,0.0001,A,190,19,0,0,0,190,190
+movielens-1m,margin,10,0.5,0,0.0001,B,190,19,0,0,0,190,190
+movielens-1m,margin,10,0.5,0,0.0001,C,190,19,0,0,0,190,190

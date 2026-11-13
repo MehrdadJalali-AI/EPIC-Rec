@@ -6,8 +6,10 @@ EPIC-Rec answers a concrete question about a recommendation list:
 > item to leave the top-K list — while every other recommended item stays, and keeps the evidence that supports
 > it?**
 
-It computes the answer exactly (mixed-integer programming with HiGHS) or approximately (greedy, beam and
-continuous-mask search), verifies every answer independently, and certifies when no such answer exists.
+It computes the answer for a margin variant (mixed-integer programming with HiGHS) or approximately (greedy, beam and
+continuous-mask search) and verifies every returned mask independently. A second HiGHS configuration cross-checks
+optimality and infeasibility claims. That cross-check is not a formal certificate, and infeasibility is for the
+margin problem on the permitted interactions, not for every possible edit of the history.
 
 ![EPIC-Rec workflow](docs/figures/workflow.png)
 
