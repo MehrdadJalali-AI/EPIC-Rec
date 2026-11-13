@@ -6,7 +6,7 @@
 
 EPIC-Rec searches for the smallest permitted change to a user's interaction history that removes a selected recommendation while keeping the remaining top-K items and at least one qualifying evidence path for each of them.
 
-![EPIC-Rec conceptual workflow: select an unwanted recommendation, find a minimal history edit, and verify target removal, list preservation and surviving evidence.](docs/figures/EPIC-Rec_ Evidence-preserving recommendation workflow.png)
+![EPIC-Rec conceptual workflow: select an unwanted recommendation, find a minimal history edit, and verify target removal, list preservation and surviving evidence.](workflow.png)
 
 *Conceptual illustration of fixed-model history masking. A successful result must pass all requested checks; some requests have no feasible solution, and others remain unresolved within the search budget.*
 
