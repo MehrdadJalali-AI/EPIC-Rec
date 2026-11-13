@@ -98,7 +98,7 @@ We make four contributions.
   constraint generation; C3 reduces to covering constraints (\Cref{sec:method}). We measure how often the margin
   version and the original problem differ.
   \item A measured cost of each constraint on MovieLens-1M and Last.fm: how many user--target pairs admit a
-  mask, how many are proven infeasible, and the paired increase in minimum mask size from C1 to C1 + C2 to
+  mask, how many are reported infeasible for $P_\varepsilon$ on $D_u(t)$, and the paired increase in minimum mask size from C1 to C1 + C2 to
   C1 + C2 + C3, stratified by target rank and history length (\Cref{sec:results}).
   \item Evidence that constraint-unaware heuristics rarely satisfy C2 and C3 by chance, and a comparison of
   heuristics and beam search with the exact optimum.
@@ -448,7 +448,7 @@ configuration is $K=10$, $\alpha=0.5$, $\phi=0$ and $\varepsilon=\Eps$. Three fu
 quartile, vary one factor each: the evidence threshold $\alpha\in\{0.25,0.5,0.75,1\}$ under C1 + C2 + C3; the list
 size $K\in\{5,10,20\}$; and the margin $\varepsilon\in\{10^{-8},10^{-6},10^{-4}\}$, with exhaustive search wherever
 $|D_u(t)|\le\EnumMax$. These samples are not the main sample. The exact solver has a budget of \TimeLimit{} seconds.
-Certification uses \CertLimit{} seconds per re-solve.
+The second HiGHS configuration uses \CertLimit{} seconds per re-solve.
 
 \paragraph{Statistics.} Mask-size costs are paired. A difference is computed only on the pairs that are optimal in both
 compared settings, because the hardest pairs drop out as constraints tighten. Each table states how many pairs and
@@ -462,7 +462,7 @@ resample users within each history quartile and keep every target of a resampled
 
 \begin{table}[t]
 \centering
-\caption{Certified solver outcomes (\%). Each row is \NPairs{} pairs from \NUsers{} users, $K=10$, $\alpha=0.5$,
+\caption{Solver outcomes after the second HiGHS configuration (\%). Each row is \NPairs{} pairs from \NUsers{} users, $K=10$, $\alpha=0.5$,
 $\varepsilon=\Eps$. A mask exists when the outcome is optimal or feasible. The feasible share on MovieLens includes
 the \MLCertUndecided{} claimed optima that the second HiGHS configuration did not confirm. The interval resamples users.}
 \label{tab:status}
@@ -470,11 +470,13 @@ the \MLCertUndecided{} claimed optima that the second HiGHS configuration did no
 \end{table}
 
 \Cref{tab:status} is the outcome of every main-sample pair after the second HiGHS configuration. On MovieLens, removing the target alone is
-always possible: a mask exists for \MLAExists\% of pairs (\MLAOpt\% with a confirmed minimum, \MLAFeas\% with a
-verified mask whose minimality was not confirmed). Keeping the other nine items lowers this to \MLBExists\%
-[\MLBExistsLo, \MLBExistsHi], and keeping their evidence as well lowers it to \MLCExists\% [\MLCExistsLo,
-\MLCExistsHi]. The pairs without a mask are proven infeasible (\MLBInf\% under C1 + C2, \MLCInf\% under
-C1 + C2 + C3) except for \MLBTout\% of pairs under C1 + C2, which reached neither a mask nor a proof. On Last.fm,
+always possible: a mask exists for \MLAExists\% of pairs (\MLAOpt\% whose optimum the second configuration
+agreed with, \MLAFeas\% with a verified mask whose minimality it did not settle). Keeping the other nine items
+lowers this to \MLBExists\% [\MLBExistsLo, \MLBExistsHi], and keeping their evidence as well lowers it to
+\MLCExists\% [\MLCExistsLo, \MLCExistsHi]. The pairs without a mask are reported infeasible for $P_\varepsilon$ on
+$D_u(t)$ (\MLBInf\% under C1 + C2, \MLCInf\% under C1 + C2 + C3) except for \MLBTout\% of pairs under C1 + C2,
+which reached neither a mask nor an infeasibility status. That status is not an infeasibility proof for $P$, and
+not for masking outside $D_u(t)$. On Last.fm,
 removal itself fails for \LFAInf\% of pairs. Keeping the list is the binding constraint: existence falls to
 \LFBExists\% [\LFBExistsLo, \LFBExistsHi], and requiring the evidence as well leaves \LFCExists\% [\LFCExistsLo,
 \LFCExistsHi]. Requiring the evidence without the list constraint, C1 + C3, leaves existence at \MLAThreeExists\% on
@@ -558,7 +560,7 @@ $\Peps$ enumeration on every decided pair--setting combination. The two problems
 smaller than $\varepsilon$ or an exact tie. On this sample, at these margins, they did not. On the pairs that are
 too large to enumerate, the indirect check is the one in \Cref{tab:heuristics}: across every stored comparison of an
 approximate method with the reported optimum, \SmallerThanOpt{} masks were smaller than that optimum and
-\SuccessOnInf{} approximate masks succeeded on a pair the MILP had proved infeasible.
+\SuccessOnInf{} approximate masks succeeded on a pair the MILP reported as infeasible.
 
 \subsection{Do constraint-unaware edits preserve the list?}
 
@@ -578,11 +580,12 @@ Last.fm pairs. Among those edits, \MLCStopList\% and \LFCStopList\% keep the oth
 asked for. When the same orders are required to satisfy the constraints, beam search and the violation greedy come
 closest to the exact solver. Beam search returns a verified mask on \MLCbeamSucc\% of MovieLens pairs and on
 \LFCbeamSucc\% of Last.fm pairs, which is every Last.fm pair for which a mask exists, and the mask has the reported
-size for \MLCbeamExact\% and \LFCbeamExact\% of its successes on proven optima. The violation greedy is close
-(\MLCgreedyviolationSucc\% and \LFCgreedyviolationSucc\% success). The repaired continuous masks succeed more often
-than beam search on MovieLens and less often at the exact size (\Cref{tab:heuristics}). Popularity and random orders
-rarely satisfy the constraints. No approximate mask in the stored comparisons is smaller than a reported optimum
-(\SmallerThanOpt{}), and none succeeds on a pair proved infeasible (\SuccessOnInf{}).
+size for \MLCbeamExact\% and \LFCbeamExact\% of its successes on pairs the exact method reported as optimal. The
+violation greedy is close (\MLCgreedyviolationSucc\% and \LFCgreedyviolationSucc\% success). The repaired continuous
+masks succeed more often than beam search on MovieLens and less often at the reported size (\Cref{tab:heuristics}).
+Popularity and random orders rarely satisfy the constraints. No approximate mask in the stored comparisons is smaller
+than a reported optimum (\SmallerThanOpt{}), and none succeeds on a pair the exact method reported as infeasible
+(\SuccessOnInf{}).
 
 \subsection{Sensitivity}
 
@@ -616,7 +619,7 @@ time out. Longer lists are harder to preserve because more items share the targe
 edit that removes the item and leaves the rest of the list and its evidence intact. The strongest recommendations,
 and the users with the shortest histories, often do not. On Last.fm the list constraint binds much earlier: a
 list-preserving edit exists for about a third of pairs, and for the top-ranked item almost never. In both datasets
-the failures are mostly proved, not merely unsolved. The exact formulation turns that entanglement into a measured
+the failures are mostly reported infeasible for $P_\varepsilon$ on $D_u(t)$, not merely unsolved. The formulation turns that entanglement into a measured
 quantity. One MovieLens optimum of size 4 was replaced by a verified optimum of size 3, and \MLCertUndecided{}
 claimed MovieLens optima remain feasible rather than optimal because a second configuration of HiGHS did not
 confirm them. That cross-check is not a certificate.
