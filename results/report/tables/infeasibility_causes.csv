@@ -1,0 +1,67 @@
+dataset,experiment,K,alpha,phi,eps,setting,infeasibility_cause,pairs,share
+lastfm,main,10,0.5,0,1e-06,A,C1 alone is infeasible: the target cannot leave the list by masking its support,86,100
+lastfm,main,10,0.5,0,1e-06,A3,C1 alone is infeasible: the target cannot leave the list by masking its support,86,25.0729
+lastfm,main,10,0.5,0,1e-06,A3,evidence entanglement: removing t removes the last qualifying evidence of a retained item,257,74.9271
+lastfm,main,10,0.5,0,1e-06,B,C1 alone is infeasible: the target cannot leave the list by masking its support,86,6.14725
+lastfm,main,10,0.5,0,1e-06,B,list entanglement: removing t forces another retained item out of the list,1313,93.8528
+lastfm,main,10,0.5,0,1e-06,C,C1 alone is infeasible: the target cannot leave the list by masking its support,86,5.97637
+lastfm,main,10,0.5,0,1e-06,C,"evidence entanglement: C1 + C2 is feasible, adding C3 makes it infeasible",6,0.416956
+lastfm,main,10,0.5,0,1e-06,C,"joint conflict: C1 + C2 and C1 + C3 are each feasible, but not together",34,2.36275
+lastfm,main,10,0.5,0,1e-06,C,list entanglement: C1 + C2 is already infeasible,1313,91.2439
+movielens-1m,ablations,10,0.5,0,1e-06,A3,evidence entanglement: removing t removes the last qualifying evidence of a retained item,146,100
+movielens-1m,ablations,10,0.5,0,1e-06,B,list entanglement: removing t forces another retained item out of the list,165,100
+movielens-1m,ablations,10,0.5,0,1e-06,C,"evidence entanglement: C1 + C2 is feasible, adding C3 makes it infeasible",45,16.9173
+movielens-1m,ablations,10,0.5,0,1e-06,C,"joint conflict: C1 + C2 and C1 + C3 are each feasible, but not together",54,20.3008
+movielens-1m,ablations,10,0.5,0,1e-06,C,list entanglement: C1 + C2 is already infeasible,165,62.0301
+movielens-1m,ablations,10,0.5,0,1e-06,C,undetermined: a weaker setting timed out,2,0.75188
+movielens-1m,k_sweep,5,0.5,0,1e-06,B,list entanglement: removing t forces another retained item out of the list,34,100
+movielens-1m,k_sweep,5,0.5,0,1e-06,C,"evidence entanglement: C1 + C2 is feasible, adding C3 makes it infeasible",17,28.3333
+movielens-1m,k_sweep,5,0.5,0,1e-06,C,"joint conflict: C1 + C2 and C1 + C3 are each feasible, but not together",9,15
+movielens-1m,k_sweep,5,0.5,0,1e-06,C,list entanglement: C1 + C2 is already infeasible,34,56.6667
+movielens-1m,k_sweep,10,0.5,0,1e-06,B,list entanglement: removing t forces another retained item out of the list,151,100
+movielens-1m,k_sweep,10,0.5,0,1e-06,C,"evidence entanglement: C1 + C2 is feasible, adding C3 makes it infeasible",38,15.2
+movielens-1m,k_sweep,10,0.5,0,1e-06,C,"joint conflict: C1 + C2 and C1 + C3 are each feasible, but not together",59,23.6
+movielens-1m,k_sweep,10,0.5,0,1e-06,C,list entanglement: C1 + C2 is already infeasible,151,60.4
+movielens-1m,k_sweep,10,0.5,0,1e-06,C,undetermined: a weaker setting timed out,2,0.8
+movielens-1m,k_sweep,20,0.5,0,1e-06,B,list entanglement: removing t forces another retained item out of the list,546,100
+movielens-1m,k_sweep,20,0.5,0,1e-06,C,"evidence entanglement: C1 + C2 is feasible, adding C3 makes it infeasible",132,14.5695
+movielens-1m,k_sweep,20,0.5,0,1e-06,C,"joint conflict: C1 + C2 and C1 + C3 are each feasible, but not together",193,21.3024
+movielens-1m,k_sweep,20,0.5,0,1e-06,C,list entanglement: C1 + C2 is already infeasible,546,60.2649
+movielens-1m,k_sweep,20,0.5,0,1e-06,C,undetermined: a weaker setting timed out,35,3.86313
+movielens-1m,main,10,0.5,0,1e-06,A3,evidence entanglement: removing t removes the last qualifying evidence of a retained item,308,100
+movielens-1m,main,10,0.5,0,1e-06,B,list entanglement: removing t forces another retained item out of the list,331,100
+movielens-1m,main,10,0.5,0,1e-06,C,"evidence entanglement: C1 + C2 is feasible, adding C3 makes it infeasible",98,18.2156
+movielens-1m,main,10,0.5,0,1e-06,C,"joint conflict: C1 + C2 and C1 + C3 are each feasible, but not together",107,19.8885
+movielens-1m,main,10,0.5,0,1e-06,C,list entanglement: C1 + C2 is already infeasible,331,61.5242
+movielens-1m,main,10,0.5,0,1e-06,C,undetermined: a weaker setting timed out,2,0.371747
+movielens-1m,margin,10,0.5,0,1e-08,B,list entanglement: removing t forces another retained item out of the list,146,100
+movielens-1m,margin,10,0.5,0,1e-08,C,"evidence entanglement: C1 + C2 is feasible, adding C3 makes it infeasible",48,19.3548
+movielens-1m,margin,10,0.5,0,1e-08,C,"joint conflict: C1 + C2 and C1 + C3 are each feasible, but not together",53,21.371
+movielens-1m,margin,10,0.5,0,1e-08,C,list entanglement: C1 + C2 is already infeasible,146,58.871
+movielens-1m,margin,10,0.5,0,1e-08,C,undetermined: a weaker setting timed out,1,0.403226
+movielens-1m,margin,10,0.5,0,1e-06,B,list entanglement: removing t forces another retained item out of the list,146,100
+movielens-1m,margin,10,0.5,0,1e-06,C,"evidence entanglement: C1 + C2 is feasible, adding C3 makes it infeasible",47,18.9516
+movielens-1m,margin,10,0.5,0,1e-06,C,"joint conflict: C1 + C2 and C1 + C3 are each feasible, but not together",53,21.371
+movielens-1m,margin,10,0.5,0,1e-06,C,list entanglement: C1 + C2 is already infeasible,146,58.871
+movielens-1m,margin,10,0.5,0,1e-06,C,undetermined: a weaker setting timed out,2,0.806452
+movielens-1m,margin,10,0.5,0,0.0001,B,list entanglement: removing t forces another retained item out of the list,146,100
+movielens-1m,margin,10,0.5,0,0.0001,C,"evidence entanglement: C1 + C2 is feasible, adding C3 makes it infeasible",48,19.3548
+movielens-1m,margin,10,0.5,0,0.0001,C,"joint conflict: C1 + C2 and C1 + C3 are each feasible, but not together",53,21.371
+movielens-1m,margin,10,0.5,0,0.0001,C,list entanglement: C1 + C2 is already infeasible,146,58.871
+movielens-1m,margin,10,0.5,0,0.0001,C,undetermined: a weaker setting timed out,1,0.403226
+movielens-1m,threshold,10,0.25,0,1e-06,C,"evidence entanglement: C1 + C2 is feasible, adding C3 makes it infeasible",13,6.43564
+movielens-1m,threshold,10,0.25,0,1e-06,C,"joint conflict: C1 + C2 and C1 + C3 are each feasible, but not together",34,16.8317
+movielens-1m,threshold,10,0.25,0,1e-06,C,list entanglement: C1 + C2 is already infeasible,154,76.2376
+movielens-1m,threshold,10,0.25,0,1e-06,C,undetermined: a weaker setting timed out,1,0.49505
+movielens-1m,threshold,10,0.5,0,1e-06,C,"evidence entanglement: C1 + C2 is feasible, adding C3 makes it infeasible",42,17.6471
+movielens-1m,threshold,10,0.5,0,1e-06,C,"joint conflict: C1 + C2 and C1 + C3 are each feasible, but not together",41,17.2269
+movielens-1m,threshold,10,0.5,0,1e-06,C,list entanglement: C1 + C2 is already infeasible,154,64.7059
+movielens-1m,threshold,10,0.5,0,1e-06,C,undetermined: a weaker setting timed out,1,0.420168
+movielens-1m,threshold,10,0.75,0,1e-06,C,"evidence entanglement: C1 + C2 is feasible, adding C3 makes it infeasible",55,20.2952
+movielens-1m,threshold,10,0.75,0,1e-06,C,"joint conflict: C1 + C2 and C1 + C3 are each feasible, but not together",61,22.5092
+movielens-1m,threshold,10,0.75,0,1e-06,C,list entanglement: C1 + C2 is already infeasible,154,56.8266
+movielens-1m,threshold,10,0.75,0,1e-06,C,undetermined: a weaker setting timed out,1,0.369004
+movielens-1m,threshold,10,1,0,1e-06,C,"evidence entanglement: C1 + C2 is feasible, adding C3 makes it infeasible",71,23.588
+movielens-1m,threshold,10,1,0,1e-06,C,"joint conflict: C1 + C2 and C1 + C3 are each feasible, but not together",75,24.9169
+movielens-1m,threshold,10,1,0,1e-06,C,list entanglement: C1 + C2 is already infeasible,154,51.1628
+movielens-1m,threshold,10,1,0,1e-06,C,undetermined: a weaker setting timed out,1,0.332226

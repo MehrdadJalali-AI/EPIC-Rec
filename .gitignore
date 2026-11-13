@@ -16,3 +16,10 @@ data/*
 /models/
 results/*
 !results/README.md
+# Aggregated tables and compact exact statuses are the manuscript's inputs.
+!results/report/
+!results/report/report_manifest.json
+!results/report/tables/
+!results/report/tables/**
+!results/published/
+!results/published/**

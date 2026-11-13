@@ -1,0 +1,265 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1340 1040" width="1340" height="1040" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,1 L9,5 L0,9 z" fill="#444"/></marker></defs>
+<rect width="1800" height="1040" fill="#fff"/>
+<text x="20" y="42" font-size="32" fill="#111" text-anchor="start" font-weight="700" font-style="normal">a</text>
+<text x="58" y="40" font-size="18" fill="#222" text-anchor="start" font-weight="normal" font-style="normal">Original recommendation</text>
+<line x1="110" y1="310" x2="240" y2="150" stroke="#3b6ea5" stroke-width="2.4"/>
+<line x1="110" y1="310" x2="240" y2="250" stroke="#3b6ea5" stroke-width="2.4"/>
+<line x1="110" y1="310" x2="240" y2="350" stroke="#3b6ea5" stroke-width="2.4"/>
+<line x1="110" y1="310" x2="240" y2="450" stroke="#3b6ea5" stroke-width="2.4"/>
+<line x1="240" y1="150" x2="390" y2="150" stroke="#c9962a" stroke-width="1.9"/>
+<line x1="240" y1="250" x2="390" y2="150" stroke="#c9962a" stroke-width="1.9"/>
+<line x1="240" y1="250" x2="390" y2="250" stroke="#c9962a" stroke-width="1.9"/>
+<line x1="240" y1="350" x2="390" y2="250" stroke="#c9962a" stroke-width="1.9"/>
+<line x1="240" y1="350" x2="390" y2="350" stroke="#c9962a" stroke-width="1.9"/>
+<line x1="240" y1="450" x2="390" y2="350" stroke="#c9962a" stroke-width="1.9"/>
+<line x1="240" y1="450" x2="390" y2="450" stroke="#c9962a" stroke-width="1.9"/>
+<line x1="390" y1="150" x2="540" y2="130" stroke="#c9962a" stroke-width="1.9"/>
+<line x1="390" y1="150" x2="540" y2="220" stroke="#c9962a" stroke-width="1.9"/>
+<line x1="390" y1="250" x2="540" y2="220" stroke="#c9962a" stroke-width="1.9"/>
+<line x1="390" y1="250" x2="540" y2="300" stroke="#c9962a" stroke-width="1.9"/>
+<line x1="390" y1="350" x2="540" y2="300" stroke="#c9962a" stroke-width="1.9"/>
+<line x1="390" y1="350" x2="540" y2="380" stroke="#c9962a" stroke-width="1.9"/>
+<line x1="390" y1="450" x2="540" y2="380" stroke="#c9962a" stroke-width="1.9"/>
+<line x1="390" y1="450" x2="540" y2="470" stroke="#c9962a" stroke-width="1.9"/>
+<path d="M240,150 Q390.0,60 540,130" fill="none" stroke="#9a9a9a" stroke-width="1.5" stroke-dasharray="6 4"/>
+<path d="M240,350 Q390.0,150 540,220" fill="none" stroke="#9a9a9a" stroke-width="1.5" stroke-dasharray="6 4"/>
+<path d="M240,450 Q390.0,530 540,470" fill="none" stroke="#9a9a9a" stroke-width="1.5" stroke-dasharray="6 4"/>
+<circle cx="110" cy="310" r="28" fill="#3b6ea5"/>
+<text x="110" y="316" font-size="18" fill="#fff" text-anchor="middle" font-weight="700" font-style="normal">u</text>
+<circle cx="240" cy="150" r="17" fill="#8fb3d9" stroke="#3b6ea5" stroke-width="1.6"/>
+<text x="240" y="155" font-size="13" fill="#1f3c5a" text-anchor="middle" font-weight="700" font-style="normal">i₁</text>
+<circle cx="240" cy="250" r="17" fill="#8fb3d9" stroke="#3b6ea5" stroke-width="1.6"/>
+<text x="240" y="255" font-size="13" fill="#1f3c5a" text-anchor="middle" font-weight="700" font-style="normal">i₂</text>
+<circle cx="240" cy="350" r="17" fill="#8fb3d9" stroke="#3b6ea5" stroke-width="1.6"/>
+<text x="240" y="355" font-size="13" fill="#1f3c5a" text-anchor="middle" font-weight="700" font-style="normal">i₃</text>
+<circle cx="240" cy="450" r="17" fill="#8fb3d9" stroke="#3b6ea5" stroke-width="1.6"/>
+<text x="240" y="455" font-size="13" fill="#1f3c5a" text-anchor="middle" font-weight="700" font-style="normal">i₄</text>
+<rect x="377" y="137" width="26" height="26" rx="4" fill="#f2c14e" stroke="#c9962a" stroke-width="1.3" transform="rotate(45 390 150)" opacity="1"/>
+<text x="390" y="155" font-size="12" fill="#5a4210" text-anchor="middle" font-weight="700" font-style="normal">A</text>
+<text x="390" y="188" font-size="11" fill="#777" text-anchor="middle" font-weight="normal" font-style="normal">actor</text>
+<rect x="377" y="237" width="26" height="26" rx="4" fill="#f2c14e" stroke="#c9962a" stroke-width="1.3" transform="rotate(45 390 250)" opacity="1"/>
+<text x="390" y="255" font-size="12" fill="#5a4210" text-anchor="middle" font-weight="700" font-style="normal">G</text>
+<text x="390" y="288" font-size="11" fill="#777" text-anchor="middle" font-weight="normal" font-style="normal">genre</text>
+<rect x="377" y="337" width="26" height="26" rx="4" fill="#f2c14e" stroke="#c9962a" stroke-width="1.3" transform="rotate(45 390 350)" opacity="1"/>
+<text x="390" y="355" font-size="12" fill="#5a4210" text-anchor="middle" font-weight="700" font-style="normal">D</text>
+<text x="390" y="388" font-size="11" fill="#777" text-anchor="middle" font-weight="normal" font-style="normal">director</text>
+<rect x="377" y="437" width="26" height="26" rx="4" fill="#f2c14e" stroke="#c9962a" stroke-width="1.3" transform="rotate(45 390 450)" opacity="1"/>
+<text x="390" y="455" font-size="12" fill="#5a4210" text-anchor="middle" font-weight="700" font-style="normal">W</text>
+<text x="390" y="488" font-size="11" fill="#777" text-anchor="middle" font-weight="normal" font-style="normal">writer</text>
+<circle cx="540" cy="130" r="17" fill="#fff" stroke="#666" stroke-width="1.6"/>
+<text x="540" y="135" font-size="13" fill="#333" text-anchor="middle" font-weight="700" font-style="normal">j₁</text>
+<circle cx="540" cy="220" r="19" fill="#d1495b"/>
+<text x="540" y="225" font-size="14" fill="#fff" text-anchor="middle" font-weight="700" font-style="normal">t</text>
+<circle cx="540" cy="300" r="17" fill="#fff" stroke="#666" stroke-width="1.6"/>
+<text x="540" y="305" font-size="13" fill="#333" text-anchor="middle" font-weight="700" font-style="normal">j₂</text>
+<circle cx="540" cy="380" r="17" fill="#fff" stroke="#666" stroke-width="1.6"/>
+<text x="540" y="385" font-size="13" fill="#333" text-anchor="middle" font-weight="700" font-style="normal">j₃</text>
+<circle cx="540" cy="470" r="17" fill="#eee" stroke="#aaa" stroke-width="1.6"/>
+<text x="540" y="475" font-size="13" fill="#444" text-anchor="middle" font-weight="700" font-style="normal">o₁</text>
+<text x="110" y="360" font-size="12" fill="#777" text-anchor="middle" font-weight="normal" font-style="normal">user</text>
+<line x1="590" y1="270" x2="680" y2="270" stroke="#444" stroke-width="2.5" marker-end="url(#ar)"/>
+<text x="635" y="258" font-size="11" fill="#777" text-anchor="middle" font-weight="normal" font-style="normal">score</text>
+<text x="635" y="292" font-size="11" fill="#777" text-anchor="middle" font-weight="normal" font-style="normal">&amp; rank</text>
+<text x="720" y="92" font-size="12" fill="#777" text-anchor="start" font-weight="normal" font-style="normal">rank</text>
+<text x="732" y="129" font-size="13" fill="#555" text-anchor="end" font-weight="normal" font-style="normal">1</text>
+<rect x="745" y="110" width="90" height="28" rx="14" fill="#8fb3d9"/>
+<text x="790" y="129" font-size="13" fill="#1f3c5a" text-anchor="middle" font-weight="700" font-style="normal">j₁</text>
+<text x="732" y="167" font-size="13" fill="#555" text-anchor="end" font-weight="normal" font-style="normal">2</text>
+<rect x="745" y="148" width="90" height="28" rx="14" fill="#d1495b"/>
+<text x="790" y="167" font-size="13" fill="#fff" text-anchor="middle" font-weight="700" font-style="normal">t</text>
+<text x="732" y="205" font-size="13" fill="#555" text-anchor="end" font-weight="normal" font-style="normal">3</text>
+<rect x="745" y="186" width="90" height="28" rx="14" fill="#8fb3d9"/>
+<text x="790" y="205" font-size="13" fill="#1f3c5a" text-anchor="middle" font-weight="700" font-style="normal">j₂</text>
+<text x="732" y="243" font-size="13" fill="#555" text-anchor="end" font-weight="normal" font-style="normal">4</text>
+<rect x="745" y="224" width="90" height="28" rx="14" fill="#8fb3d9"/>
+<text x="790" y="243" font-size="13" fill="#1f3c5a" text-anchor="middle" font-weight="700" font-style="normal">j₃</text>
+<text x="790" y="278" font-size="16" fill="#888" text-anchor="middle" font-weight="normal" font-style="normal">⋮</text>
+<text x="732" y="315" font-size="13" fill="#555" text-anchor="end" font-weight="normal" font-style="normal">10</text>
+<rect x="745" y="296" width="90" height="28" rx="14" fill="#8fb3d9"/>
+<text x="790" y="315" font-size="13" fill="#1f3c5a" text-anchor="middle" font-weight="700" font-style="normal">j₉</text>
+<line x1="710" y1="334" x2="890" y2="334" stroke="#333" stroke-dasharray="6 4"/>
+<text x="890" y="328" font-size="11" fill="#555" text-anchor="end" font-weight="normal" font-style="normal">K = 10</text>
+<rect x="745" y="344" width="90" height="28" rx="14" fill="#eee"/>
+<text x="790" y="363" font-size="13" fill="#888" text-anchor="middle" font-weight="700" font-style="normal">o₁</text>
+<text x="848" y="363" font-size="11" fill="#999" text-anchor="start" font-weight="normal" font-style="normal">outsider</text>
+<text x="745" y="80" font-size="14" fill="#222" text-anchor="start" font-weight="700" font-style="normal">Top-K list</text>
+<line x1="780" y1="470" x2="808" y2="470" stroke="#c9962a" stroke-width="2"/>
+<text x="816" y="474" font-size="12" fill="#555" text-anchor="start" font-weight="normal" font-style="normal">KG path</text>
+<line x1="780" y1="492" x2="808" y2="492" stroke="#9a9a9a" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="816" y="496" font-size="12" fill="#555" text-anchor="start" font-weight="normal" font-style="normal">collaborative path</text>
+<rect x="900" y="463" width="13" height="13" rx="2" fill="#f2c14e" stroke="#c9962a" transform="rotate(45 906 470)"/>
+<text x="920" y="474" font-size="12" fill="#555" text-anchor="start" font-weight="normal" font-style="normal">KG entity</text>
+<circle cx="906" cy="492" r="7" fill="#d1495b"/>
+<text x="920" y="496" font-size="12" fill="#555" text-anchor="start" font-weight="normal" font-style="normal">target t</text>
+<text x="1010" y="80" font-size="14" fill="#222" text-anchor="start" font-weight="700" font-style="normal">Request: remove t, keep the rest</text>
+<rect x="1010" y="100" width="290" height="40" rx="20" fill="#fbeaec"/><circle cx="1030" cy="120" r="15" fill="#d1495b"/>
+<text x="1030" y="125" font-size="12" fill="#fff" text-anchor="middle" font-weight="700" font-style="normal">C1</text>
+<text x="1054" y="125" font-size="13" fill="#333" text-anchor="start" font-weight="normal" font-style="normal">t leaves top-K</text>
+<rect x="1010" y="152" width="290" height="40" rx="20" fill="#eef3f9"/><circle cx="1030" cy="172" r="15" fill="#3b6ea5"/>
+<text x="1030" y="177" font-size="12" fill="#fff" text-anchor="middle" font-weight="700" font-style="normal">C2</text>
+<text x="1054" y="177" font-size="13" fill="#333" text-anchor="start" font-weight="normal" font-style="normal">other K−1 items stay</text>
+<rect x="1010" y="204" width="290" height="40" rx="20" fill="#fbf3dd"/><circle cx="1030" cy="224" r="15" fill="#c9962a"/>
+<text x="1030" y="229" font-size="12" fill="#fff" text-anchor="middle" font-weight="700" font-style="normal">C3</text>
+<text x="1054" y="229" font-size="13" fill="#333" text-anchor="start" font-weight="normal" font-style="normal">each keeps ≥1 evidence path</text>
+<text x="1010" y="286" font-size="15" fill="#222" text-anchor="start" font-weight="normal" font-style="italic">min |M|  s.t. C1+C2+C3</text>
+<text x="1010" y="310" font-size="12" fill="#666" text-anchor="start" font-weight="normal" font-style="normal">exact MILP · lazy constraints</text>
+<text x="1010" y="328" font-size="12" fill="#666" text-anchor="start" font-weight="normal" font-style="normal">every mask verified by re-ranking</text>
+<text x="1380" y="80" font-size="14" fill="#222" text-anchor="start" font-weight="700" font-style="normal">MovieLens-1M: valid mask (%)</text>
+<line x1="1420" y1="110" x2="1420" y2="390" stroke="#333"/>
+<line x1="1420" y1="390" x2="1774" y2="390" stroke="#333"/>
+<line x1="1415" y1="390.0" x2="1420" y2="390.0" stroke="#333"/>
+<text x="1411" y="394.0" font-size="11" fill="#555" text-anchor="end" font-weight="normal" font-style="normal">0</text>
+<line x1="1415" y1="320.0" x2="1420" y2="320.0" stroke="#333"/>
+<text x="1411" y="324.0" font-size="11" fill="#555" text-anchor="end" font-weight="normal" font-style="normal">25</text>
+<line x1="1415" y1="250.0" x2="1420" y2="250.0" stroke="#333"/>
+<text x="1411" y="254.0" font-size="11" fill="#555" text-anchor="end" font-weight="normal" font-style="normal">50</text>
+<line x1="1415" y1="180.0" x2="1420" y2="180.0" stroke="#333"/>
+<text x="1411" y="184.0" font-size="11" fill="#555" text-anchor="end" font-weight="normal" font-style="normal">75</text>
+<line x1="1415" y1="110.0" x2="1420" y2="110.0" stroke="#333"/>
+<text x="1411" y="114.0" font-size="11" fill="#555" text-anchor="end" font-weight="normal" font-style="normal">100</text>
+<rect x="1435.0" y="110.0" width="56" height="280.0" fill="#d1495b"/>
+<text x="1463.0" y="103.0" font-size="12" fill="#222" text-anchor="middle" font-weight="700" font-style="normal">100</text>
+<text x="1463.0" y="408" font-size="12" fill="#444" text-anchor="middle" font-weight="normal" font-style="normal">C1</text>
+<rect x="1521.0" y="156.76" width="56" height="233.24" fill="#3b6ea5"/>
+<text x="1549.0" y="149.76" font-size="12" fill="#222" text-anchor="middle" font-weight="700" font-style="normal">83.3</text>
+<text x="1549.0" y="408" font-size="12" fill="#444" text-anchor="middle" font-weight="normal" font-style="normal">C1+C2</text>
+<rect x="1607.0" y="185.32" width="56" height="204.68" fill="#c9962a"/>
+<text x="1635.0" y="178.32" font-size="12" fill="#222" text-anchor="middle" font-weight="700" font-style="normal">73.1</text>
+<text x="1635.0" y="408" font-size="9" fill="#444" text-anchor="middle" font-weight="normal" font-style="normal">C1+C2+C3</text>
+<rect x="1693.0" y="313.0" width="56" height="77.0" fill="#aaa"/>
+<text x="1721.0" y="306.0" font-size="12" fill="#222" text-anchor="middle" font-weight="700" font-style="normal">27.5</text>
+<text x="1721.0" y="408" font-size="9" fill="#444" text-anchor="middle" font-weight="normal" font-style="normal">C1-stop</text>
+<line x1="20" y1="540" x2="1780" y2="540" stroke="#ddd"/>
+<path d="M1155,370 L1155,600" stroke="#444" stroke-width="2.5" fill="none" marker-end="url(#ar)"/>
+<text x="1168" y="500" font-size="12" fill="#777" text-anchor="start" font-weight="normal" font-style="normal">apply M</text>
+<text x="20" y="592" font-size="32" fill="#111" text-anchor="start" font-weight="700" font-style="normal">b</text>
+<text x="58" y="590" font-size="18" fill="#222" text-anchor="start" font-weight="normal" font-style="normal">Counterfactual with mask M = {i₂, i₃}</text>
+<line x1="110" y1="850" x2="240" y2="690" stroke="#3b6ea5" stroke-width="2.4"/>
+<line x1="110" y1="850" x2="240" y2="790" stroke="#d1495b" stroke-width="2.2" stroke-dasharray="5 4"/>
+<path d="M168.0,813.0 l14,14 M182.0,813.0 l-14,14" stroke="#d1495b" stroke-width="3"/>
+<line x1="110" y1="850" x2="240" y2="890" stroke="#d1495b" stroke-width="2.2" stroke-dasharray="5 4"/>
+<path d="M168.0,863.0 l14,14 M182.0,863.0 l-14,14" stroke="#d1495b" stroke-width="3"/>
+<line x1="110" y1="850" x2="240" y2="990" stroke="#3b6ea5" stroke-width="2.4"/>
+<line x1="240" y1="690" x2="390" y2="690" stroke="#c9962a" stroke-width="1.9"/>
+<line x1="240" y1="790" x2="390" y2="690" stroke="#ddd" stroke-width="1.4" stroke-dasharray="3 3"/>
+<line x1="240" y1="790" x2="390" y2="790" stroke="#ddd" stroke-width="1.4" stroke-dasharray="3 3"/>
+<line x1="240" y1="890" x2="390" y2="790" stroke="#ddd" stroke-width="1.4" stroke-dasharray="3 3"/>
+<line x1="240" y1="890" x2="390" y2="890" stroke="#ddd" stroke-width="1.4" stroke-dasharray="3 3"/>
+<line x1="240" y1="990" x2="390" y2="890" stroke="#c9962a" stroke-width="1.9"/>
+<line x1="240" y1="990" x2="390" y2="990" stroke="#c9962a" stroke-width="1.9"/>
+<line x1="390" y1="690" x2="540" y2="670" stroke="#c9962a" stroke-width="1.9"/>
+<line x1="390" y1="690" x2="540" y2="760" stroke="#c9962a" stroke-width="1.9"/>
+<line x1="390" y1="790" x2="540" y2="760" stroke="#ddd" stroke-width="1.4" stroke-dasharray="3 3"/>
+<line x1="390" y1="790" x2="540" y2="840" stroke="#ddd" stroke-width="1.4" stroke-dasharray="3 3"/>
+<line x1="390" y1="890" x2="540" y2="840" stroke="#c9962a" stroke-width="1.9"/>
+<line x1="390" y1="890" x2="540" y2="920" stroke="#c9962a" stroke-width="1.9"/>
+<line x1="390" y1="990" x2="540" y2="920" stroke="#c9962a" stroke-width="1.9"/>
+<line x1="390" y1="990" x2="540" y2="1010" stroke="#c9962a" stroke-width="1.9"/>
+<path d="M240,690 Q390.0,600 540,670" fill="none" stroke="#9a9a9a" stroke-width="1.5" stroke-dasharray="6 4"/>
+<path d="M240,890 Q390.0,690 540,760" fill="none" stroke="#ddd" stroke-width="1.5" stroke-dasharray="6 4"/>
+<path d="M240,990 Q390.0,1070 540,1010" fill="none" stroke="#9a9a9a" stroke-width="1.5" stroke-dasharray="6 4"/>
+<circle cx="110" cy="850" r="28" fill="#3b6ea5"/>
+<text x="110" y="856" font-size="18" fill="#fff" text-anchor="middle" font-weight="700" font-style="normal">u</text>
+<circle cx="240" cy="690" r="17" fill="#8fb3d9" stroke="#3b6ea5" stroke-width="1.6"/>
+<text x="240" y="695" font-size="13" fill="#1f3c5a" text-anchor="middle" font-weight="700" font-style="normal">i₁</text>
+<circle cx="240" cy="790" r="17" fill="#f6d5d9" stroke="#d1495b" stroke-width="1.8" stroke-dasharray="4 3"/>
+<text x="240" y="795" font-size="13" fill="#d1495b" text-anchor="middle" font-weight="700" font-style="normal">i₂</text>
+<circle cx="240" cy="890" r="17" fill="#f6d5d9" stroke="#d1495b" stroke-width="1.8" stroke-dasharray="4 3"/>
+<text x="240" y="895" font-size="13" fill="#d1495b" text-anchor="middle" font-weight="700" font-style="normal">i₃</text>
+<circle cx="240" cy="990" r="17" fill="#8fb3d9" stroke="#3b6ea5" stroke-width="1.6"/>
+<text x="240" y="995" font-size="13" fill="#1f3c5a" text-anchor="middle" font-weight="700" font-style="normal">i₄</text>
+<rect x="377" y="677" width="26" height="26" rx="4" fill="#f2c14e" stroke="#c9962a" stroke-width="1.3" transform="rotate(45 390 690)" opacity="1"/>
+<text x="390" y="695" font-size="12" fill="#5a4210" text-anchor="middle" font-weight="700" font-style="normal">A</text>
+<text x="390" y="728" font-size="11" fill="#777" text-anchor="middle" font-weight="normal" font-style="normal">actor</text>
+<rect x="377" y="777" width="26" height="26" rx="4" fill="#f2c14e" stroke="#c9962a" stroke-width="1.3" transform="rotate(45 390 790)" opacity=".35"/>
+<text x="390" y="795" font-size="12" fill="#5a4210" text-anchor="middle" font-weight="700" font-style="normal">G</text>
+<text x="390" y="828" font-size="11" fill="#777" text-anchor="middle" font-weight="normal" font-style="normal">genre</text>
+<rect x="377" y="877" width="26" height="26" rx="4" fill="#f2c14e" stroke="#c9962a" stroke-width="1.3" transform="rotate(45 390 890)" opacity="1"/>
+<text x="390" y="895" font-size="12" fill="#5a4210" text-anchor="middle" font-weight="700" font-style="normal">D</text>
+<text x="390" y="928" font-size="11" fill="#777" text-anchor="middle" font-weight="normal" font-style="normal">director</text>
+<rect x="377" y="977" width="26" height="26" rx="4" fill="#f2c14e" stroke="#c9962a" stroke-width="1.3" transform="rotate(45 390 990)" opacity="1"/>
+<text x="390" y="995" font-size="12" fill="#5a4210" text-anchor="middle" font-weight="700" font-style="normal">W</text>
+<text x="390" y="1028" font-size="11" fill="#777" text-anchor="middle" font-weight="normal" font-style="normal">writer</text>
+<circle cx="540" cy="670" r="17" fill="#fff" stroke="#666" stroke-width="1.6"/>
+<text x="540" y="675" font-size="13" fill="#333" text-anchor="middle" font-weight="700" font-style="normal">j₁</text>
+<text x="564" y="675" font-size="15" fill="#2e8b57" text-anchor="start" font-weight="700" font-style="normal">✓</text>
+<circle cx="540" cy="760" r="19" fill="#fff" stroke="#d1495b" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="540" y="765" font-size="14" fill="#d1495b" text-anchor="middle" font-weight="700" font-style="normal">t</text>
+<circle cx="540" cy="840" r="17" fill="#fff" stroke="#666" stroke-width="1.6"/>
+<text x="540" y="845" font-size="13" fill="#333" text-anchor="middle" font-weight="700" font-style="normal">j₂</text>
+<text x="564" y="845" font-size="15" fill="#2e8b57" text-anchor="start" font-weight="700" font-style="normal">✓</text>
+<circle cx="540" cy="920" r="17" fill="#fff" stroke="#666" stroke-width="1.6"/>
+<text x="540" y="925" font-size="13" fill="#333" text-anchor="middle" font-weight="700" font-style="normal">j₃</text>
+<text x="564" y="925" font-size="15" fill="#2e8b57" text-anchor="start" font-weight="700" font-style="normal">✓</text>
+<circle cx="540" cy="1010" r="17" fill="#f2c14e" stroke="#c9962a" stroke-width="1.6"/>
+<text x="540" y="1015" font-size="13" fill="#444" text-anchor="middle" font-weight="700" font-style="normal">o₁</text>
+<text x="110" y="900" font-size="12" fill="#777" text-anchor="middle" font-weight="normal" font-style="normal">user</text>
+<text x="200" y="844" font-size="15" fill="#d1495b" text-anchor="end" font-weight="700" font-style="normal">M</text>
+<text x="240" y="1050" font-size="11" fill="#333" text-anchor="start" font-weight="normal" font-style="normal"></text>
+<line x1="590" y1="810" x2="680" y2="810" stroke="#444" stroke-width="2.5" marker-end="url(#ar)"/>
+<text x="635" y="798" font-size="11" fill="#777" text-anchor="middle" font-weight="normal" font-style="normal">re-rank</text>
+<text x="720" y="632" font-size="12" fill="#777" text-anchor="start" font-weight="normal" font-style="normal">rank</text>
+<text x="732" y="669" font-size="13" fill="#555" text-anchor="end" font-weight="normal" font-style="normal">1</text>
+<rect x="745" y="650" width="90" height="28" rx="14" fill="#8fb3d9"/>
+<text x="790" y="669" font-size="13" fill="#1f3c5a" text-anchor="middle" font-weight="700" font-style="normal">j₁</text>
+<text x="848" y="669" font-size="15" fill="#2e8b57" text-anchor="start" font-weight="700" font-style="normal">✓</text>
+<text x="732" y="707" font-size="13" fill="#555" text-anchor="end" font-weight="normal" font-style="normal">2</text>
+<rect x="745" y="688" width="90" height="28" rx="14" fill="#8fb3d9"/>
+<text x="790" y="707" font-size="13" fill="#1f3c5a" text-anchor="middle" font-weight="700" font-style="normal">j₂</text>
+<text x="848" y="707" font-size="15" fill="#2e8b57" text-anchor="start" font-weight="700" font-style="normal">✓</text>
+<text x="732" y="745" font-size="13" fill="#555" text-anchor="end" font-weight="normal" font-style="normal">3</text>
+<rect x="745" y="726" width="90" height="28" rx="14" fill="#8fb3d9"/>
+<text x="790" y="745" font-size="13" fill="#1f3c5a" text-anchor="middle" font-weight="700" font-style="normal">j₃</text>
+<text x="848" y="745" font-size="15" fill="#2e8b57" text-anchor="start" font-weight="700" font-style="normal">✓</text>
+<text x="790" y="780" font-size="16" fill="#888" text-anchor="middle" font-weight="normal" font-style="normal">⋮</text>
+<text x="732" y="817" font-size="13" fill="#555" text-anchor="end" font-weight="normal" font-style="normal">9</text>
+<rect x="745" y="798" width="90" height="28" rx="14" fill="#8fb3d9"/>
+<text x="790" y="817" font-size="13" fill="#1f3c5a" text-anchor="middle" font-weight="700" font-style="normal">j₉</text>
+<text x="848" y="817" font-size="15" fill="#2e8b57" text-anchor="start" font-weight="700" font-style="normal">✓</text>
+<text x="732" y="855" font-size="13" fill="#555" text-anchor="end" font-weight="normal" font-style="normal">10</text>
+<rect x="745" y="836" width="90" height="28" rx="14" fill="#f2c14e"/>
+<text x="790" y="855" font-size="13" fill="#5a4210" text-anchor="middle" font-weight="700" font-style="normal">o₁</text>
+<text x="848" y="855" font-size="11" fill="#9a7400" text-anchor="start" font-weight="normal" font-style="normal">new</text>
+<line x1="710" y1="874" x2="890" y2="874" stroke="#333" stroke-dasharray="6 4"/>
+<text x="890" y="868" font-size="11" fill="#555" text-anchor="end" font-weight="normal" font-style="normal">K = 10</text>
+<rect x="745" y="884" width="90" height="28" rx="14" fill="#fff" stroke="#d1495b" stroke-dasharray="4 3"/>
+<text x="790" y="903" font-size="13" fill="#d1495b" text-anchor="middle" font-weight="700" font-style="normal">t</text>
+<text x="848" y="903" font-size="11" fill="#d1495b" text-anchor="start" font-weight="normal" font-style="normal">removed</text>
+<text x="745" y="620" font-size="14" fill="#222" text-anchor="start" font-weight="700" font-style="normal">Counterfactual top-K</text>
+<text x="1010" y="650" font-size="14" fill="#222" text-anchor="start" font-weight="700" font-style="normal">Outcome</text>
+<circle cx="1025" cy="686" r="13" fill="#d1495b"/>
+<text x="1025" y="691" font-size="11" fill="#fff" text-anchor="middle" font-weight="700" font-style="normal">C1</text>
+<text x="1046" y="691" font-size="13" fill="#333" text-anchor="start" font-weight="normal" font-style="normal">t removed</text>
+<text x="1300" y="691" font-size="16" fill="#2e8b57" text-anchor="end" font-weight="700" font-style="normal">✓</text>
+<circle cx="1025" cy="730" r="13" fill="#3b6ea5"/>
+<text x="1025" y="735" font-size="11" fill="#fff" text-anchor="middle" font-weight="700" font-style="normal">C2</text>
+<text x="1046" y="735" font-size="13" fill="#333" text-anchor="start" font-weight="normal" font-style="normal">j₁ … j₉ remain; o₁ enters</text>
+<text x="1300" y="735" font-size="16" fill="#2e8b57" text-anchor="end" font-weight="700" font-style="normal">✓</text>
+<circle cx="1025" cy="774" r="13" fill="#c9962a"/>
+<text x="1025" y="779" font-size="11" fill="#fff" text-anchor="middle" font-weight="700" font-style="normal">C3</text>
+<text x="1046" y="779" font-size="13" fill="#333" text-anchor="start" font-weight="normal" font-style="normal">j₁ via A · j₂ via D · j₃ via W</text>
+<text x="1300" y="779" font-size="16" fill="#2e8b57" text-anchor="end" font-weight="700" font-style="normal">✓</text>
+<text x="1010" y="830" font-size="13" fill="#444" text-anchor="start" font-weight="normal" font-style="italic">Explanation: “without i₂ and i₃,</text>
+<text x="1010" y="848" font-size="13" fill="#444" text-anchor="start" font-weight="normal" font-style="italic">t would not be recommended”</text>
+<text x="1380" y="630" font-size="14" fill="#222" text-anchor="start" font-weight="700" font-style="normal">Extra interactions masked (Δ|M|)</text>
+<line x1="1420" y1="660" x2="1420" y2="940" stroke="#333"/>
+<line x1="1420" y1="940" x2="1690" y2="940" stroke="#333"/>
+<line x1="1415" y1="940.0" x2="1420" y2="940.0" stroke="#333"/>
+<text x="1411" y="944.0" font-size="11" fill="#555" text-anchor="end" font-weight="normal" font-style="normal">0</text>
+<line x1="1415" y1="846.6666666666666" x2="1420" y2="846.6666666666666" stroke="#333"/>
+<text x="1411" y="850.6666666666666" font-size="11" fill="#555" text-anchor="end" font-weight="normal" font-style="normal">1</text>
+<line x1="1415" y1="753.3333333333334" x2="1420" y2="753.3333333333334" stroke="#333"/>
+<text x="1411" y="757.3333333333334" font-size="11" fill="#555" text-anchor="end" font-weight="normal" font-style="normal">2</text>
+<line x1="1415" y1="660.0" x2="1420" y2="660.0" stroke="#333"/>
+<text x="1411" y="664.0" font-size="11" fill="#555" text-anchor="end" font-weight="normal" font-style="normal">3</text>
+<rect x="1450.0" y="735.6" width="70" height="204.39999999999998" fill="#3b6ea5"/>
+<line x1="1485.0" y1="771.0666666666666" x2="1485.0" y2="698.2666666666667" stroke="#222" stroke-width="1.4"/><line x1="1479.0" y1="771.0666666666666" x2="1491.0" y2="771.0666666666666" stroke="#222"/><line x1="1479.0" y1="698.2666666666667" x2="1491.0" y2="698.2666666666667" stroke="#222"/>
+<text x="1485.0" y="691.2666666666667" font-size="12" fill="#222" text-anchor="middle" font-weight="700" font-style="normal">2.19</text>
+<text x="1485.0" y="958" font-size="12" fill="#444" text-anchor="middle" font-weight="normal" font-style="normal">C1→C1+C2</text>
+<rect x="1580.0" y="907.3333333333334" width="70" height="32.666666666666664" fill="#c9962a"/>
+<line x1="1615.0" y1="914.8" x2="1615.0" y2="899.8666666666667" stroke="#222" stroke-width="1.4"/><line x1="1609.0" y1="914.8" x2="1621.0" y2="914.8" stroke="#222"/><line x1="1609.0" y1="899.8666666666667" x2="1621.0" y2="899.8666666666667" stroke="#222"/>
+<text x="1615.0" y="892.8666666666667" font-size="12" fill="#222" text-anchor="middle" font-weight="700" font-style="normal">0.35</text>
+<text x="1615.0" y="958" font-size="12" fill="#444" text-anchor="middle" font-weight="normal" font-style="normal">→ +C3</text>
+<text x="1380" y="990" font-size="11" fill="#777" text-anchor="start" font-weight="normal" font-style="normal">paired means, 95% bootstrap CI</text>
+</svg>

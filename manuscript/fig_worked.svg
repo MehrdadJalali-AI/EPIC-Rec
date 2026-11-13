@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 280" width="980" height="280" font-family="Helvetica, Arial, sans-serif">
+<rect width="980" height="280" fill="#fff"/>
+<text x="16" y="36" font-size="18" font-weight="700" fill="#111">Before</text>
+<rect x="16" y="64" width="250" height="30" rx="6" fill="#d9e6f2"/>
+<text x="24" y="84" font-size="14" fill="#1f3c5a" font-weight="700">1. Godfather: Part II, T…  11.333</text>
+<rect x="16" y="100" width="250" height="30" rx="6" fill="#d9e6f2"/>
+<text x="24" y="120" font-size="14" fill="#1f3c5a" font-weight="700">2. Shawshank Redemption,…  11.073</text>
+<rect x="16" y="136" width="250" height="30" rx="6" fill="#d9e6f2"/>
+<text x="24" y="156" font-size="14" fill="#1f3c5a" font-weight="700">3. Star Wars: Episode IV…  10.943</text>
+<rect x="16" y="172" width="250" height="30" rx="6" fill="#d1495b"/>
+<text x="24" y="192" font-size="14" fill="#fff" font-weight="700">4. Star Wars: Episode VI…  10.236</text>
+<rect x="16" y="208" width="250" height="30" rx="6" fill="#d9e6f2"/>
+<text x="24" y="228" font-size="14" fill="#1f3c5a" font-weight="700">5. Pulp Fiction  9.611</text>
+<text x="300" y="150" font-size="22" fill="#444">→</text>
+<text x="330" y="36" font-size="18" font-weight="700" fill="#111">Masked history</text>
+<rect x="330" y="64" width="250" height="30" rx="6" fill="#f6d5d9"/>
+<text x="338" y="84" font-size="14" fill="#8c1d2c" font-weight="700">Star Wars: Episode V - …</text>
+<rect x="330" y="100" width="250" height="30" rx="6" fill="#fff"/>
+<text x="338" y="120" font-size="14" fill="#333" font-weight="700">status optimal, |M| = 1</text>
+<text x="640" y="150" font-size="22" fill="#444">→</text>
+<text x="690" y="36" font-size="18" font-weight="700" fill="#111">After</text>
+<rect x="690" y="64" width="250" height="30" rx="6" fill="#d9e6f2"/>
+<text x="698" y="84" font-size="14" fill="#1f3c5a" font-weight="700">1. Godfather: Part II, T…  10.400</text>
+<text x="948" y="84" font-size="16" fill="#2e8b57" font-weight="700">✓</text>
+<rect x="690" y="100" width="250" height="30" rx="6" fill="#d9e6f2"/>
+<text x="698" y="120" font-size="14" fill="#1f3c5a" font-weight="700">2. Shawshank Redemption,…  10.113</text>
+<text x="948" y="120" font-size="16" fill="#2e8b57" font-weight="700">✓</text>
+<rect x="690" y="136" width="250" height="30" rx="6" fill="#d9e6f2"/>
+<text x="698" y="156" font-size="14" fill="#1f3c5a" font-weight="700">3. Pulp Fiction  8.700</text>
+<text x="948" y="156" font-size="16" fill="#2e8b57" font-weight="700">✓</text>
+<rect x="690" y="172" width="250" height="30" rx="6" fill="#d9e6f2"/>
+<text x="698" y="192" font-size="14" fill="#1f3c5a" font-weight="700">4. Star Wars: Episode IV…  8.646</text>
+<text x="948" y="192" font-size="16" fill="#2e8b57" font-weight="700">✓</text>
+<rect x="690" y="208" width="250" height="30" rx="6" fill="#f2c14e"/>
+<text x="698" y="228" font-size="14" fill="#5a4210" font-weight="700">5. Schindler's List  8.545</text>
+<text x="948" y="228" font-size="16" fill="#2e8b57" font-weight="700">new</text>
+</svg>

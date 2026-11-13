@@ -1,0 +1,406 @@
+{
+  "kind": "worked_example_k5",
+  "illustrative": true,
+  "source": "results/movielens-1m/k_sweep exact records, re-solved",
+  "dataset": "movielens-1m",
+  "user_id": 4739,
+  "history_length": 12,
+  "domain_size": 12,
+  "K": 5,
+  "alpha": 0.5,
+  "phi": 0.0,
+  "eps": 1e-06,
+  "famous": true,
+  "history": [
+    {
+      "item_id": 333,
+      "title": "Silence of the Lambs, The (1991)"
+    },
+    {
+      "item_id": 429,
+      "title": "Godfather, The (1972)"
+    },
+    {
+      "item_id": 454,
+      "title": "Citizen Kane (1941)"
+    },
+    {
+      "item_id": 575,
+      "title": "Star Wars: Episode V - The Empire Strikes Back (1980)"
+    },
+    {
+      "item_id": 596,
+      "title": "Raging Bull (1980)"
+    },
+    {
+      "item_id": 607,
+      "title": "Bridge on the River Kwai, The (1957)"
+    },
+    {
+      "item_id": 1276,
+      "title": "Star Wars: Episode I - The Phantom Menace (1999)"
+    },
+    {
+      "item_id": 1349,
+      "title": "Sixth Sense, The (1999)"
+    },
+    {
+      "item_id": 1373,
+      "title": "Christmas Story, A (1983)"
+    },
+    {
+      "item_id": 1445,
+      "title": "Fight Club (1999)"
+    },
+    {
+      "item_id": 1474,
+      "title": "Insider, The (1999)"
+    },
+    {
+      "item_id": 1550,
+      "title": "Green Mile, The (1999)"
+    }
+  ],
+  "original_topk": [
+    {
+      "rank": 1,
+      "item_id": 591,
+      "score": 11.3328,
+      "title": "Godfather: Part II, The (1974)"
+    },
+    {
+      "rank": 2,
+      "item_id": 177,
+      "score": 11.0729,
+      "title": "Shawshank Redemption, The (1994)"
+    },
+    {
+      "rank": 3,
+      "item_id": 142,
+      "score": 10.9434,
+      "title": "Star Wars: Episode IV - A New Hope (1977)"
+    },
+    {
+      "rank": 4,
+      "item_id": 585,
+      "score": 10.2361,
+      "title": "Star Wars: Episode VI - Return of the Jedi (1983)"
+    },
+    {
+      "rank": 5,
+      "item_id": 162,
+      "score": 9.6114,
+      "title": "Pulp Fiction (1994)"
+    }
+  ],
+  "target": {
+    "item_id": 585,
+    "title": "Star Wars: Episode VI - Return of the Jedi (1983)",
+    "rank": 4,
+    "score": 10.2361
+  },
+  "mask": [
+    {
+      "item_id": 575,
+      "title": "Star Wars: Episode V - The Empire Strikes Back (1980)"
+    }
+  ],
+  "target_contributions": [
+    {
+      "item_id": 575,
+      "title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+      "A_ij_before": 2.677966,
+      "A_ij_after": 0.0,
+      "masked": true
+    },
+    {
+      "item_id": 1276,
+      "title": "Star Wars: Episode I - The Phantom Menace (1999)",
+      "A_ij_before": 1.393184,
+      "A_ij_after": 1.393184,
+      "masked": false
+    },
+    {
+      "item_id": 1349,
+      "title": "Sixth Sense, The (1999)",
+      "A_ij_before": 0.820541,
+      "A_ij_after": 0.820541,
+      "masked": false
+    },
+    {
+      "item_id": 333,
+      "title": "Silence of the Lambs, The (1991)",
+      "A_ij_before": 0.812156,
+      "A_ij_after": 0.812156,
+      "masked": false
+    },
+    {
+      "item_id": 429,
+      "title": "Godfather, The (1972)",
+      "A_ij_before": 0.769186,
+      "A_ij_after": 0.769186,
+      "masked": false
+    },
+    {
+      "item_id": 607,
+      "title": "Bridge on the River Kwai, The (1957)",
+      "A_ij_before": 0.695507,
+      "A_ij_after": 0.695507,
+      "masked": false
+    }
+  ],
+  "settings": {
+    "A": {
+      "status": "optimal",
+      "size": 1,
+      "runtime_s": 0.1376,
+      "mask": [
+        {
+          "item_id": 575,
+          "title": "Star Wars: Episode V - The Empire Strikes Back (1980)"
+        }
+      ],
+      "new_topk": [
+        {
+          "rank": 1,
+          "item_id": 591,
+          "score": 10.3997,
+          "title": "Godfather: Part II, The (1974)"
+        },
+        {
+          "rank": 2,
+          "item_id": 177,
+          "score": 10.1131,
+          "title": "Shawshank Redemption, The (1994)"
+        },
+        {
+          "rank": 3,
+          "item_id": 162,
+          "score": 8.6997,
+          "title": "Pulp Fiction (1994)"
+        },
+        {
+          "rank": 4,
+          "item_id": 142,
+          "score": 8.6464,
+          "title": "Star Wars: Episode IV - A New Hope (1977)"
+        },
+        {
+          "rank": 5,
+          "item_id": 299,
+          "score": 8.545,
+          "title": "Schindler's List (1993)"
+        }
+      ],
+      "verifier": {
+        "passed": true,
+        "c1": true,
+        "c2": true,
+        "c3": null
+      },
+      "stored_status": "optimal",
+      "stored_size": 1,
+      "matches_stored_mask": true,
+      "kendall_retained": 0.6667
+    },
+    "B": {
+      "status": "optimal",
+      "size": 1,
+      "runtime_s": 0.1029,
+      "mask": [
+        {
+          "item_id": 575,
+          "title": "Star Wars: Episode V - The Empire Strikes Back (1980)"
+        }
+      ],
+      "new_topk": [
+        {
+          "rank": 1,
+          "item_id": 591,
+          "score": 10.3997,
+          "title": "Godfather: Part II, The (1974)"
+        },
+        {
+          "rank": 2,
+          "item_id": 177,
+          "score": 10.1131,
+          "title": "Shawshank Redemption, The (1994)"
+        },
+        {
+          "rank": 3,
+          "item_id": 162,
+          "score": 8.6997,
+          "title": "Pulp Fiction (1994)"
+        },
+        {
+          "rank": 4,
+          "item_id": 142,
+          "score": 8.6464,
+          "title": "Star Wars: Episode IV - A New Hope (1977)"
+        },
+        {
+          "rank": 5,
+          "item_id": 299,
+          "score": 8.545,
+          "title": "Schindler's List (1993)"
+        }
+      ],
+      "verifier": {
+        "passed": true,
+        "c1": true,
+        "c2": true,
+        "c3": null
+      },
+      "stored_status": "optimal",
+      "stored_size": 1,
+      "matches_stored_mask": true,
+      "kendall_retained": 0.6667
+    },
+    "C": {
+      "status": "optimal",
+      "size": 1,
+      "runtime_s": 0.1137,
+      "mask": [
+        {
+          "item_id": 575,
+          "title": "Star Wars: Episode V - The Empire Strikes Back (1980)"
+        }
+      ],
+      "new_topk": [
+        {
+          "rank": 1,
+          "item_id": 591,
+          "score": 10.3997,
+          "title": "Godfather: Part II, The (1974)"
+        },
+        {
+          "rank": 2,
+          "item_id": 177,
+          "score": 10.1131,
+          "title": "Shawshank Redemption, The (1994)"
+        },
+        {
+          "rank": 3,
+          "item_id": 162,
+          "score": 8.6997,
+          "title": "Pulp Fiction (1994)"
+        },
+        {
+          "rank": 4,
+          "item_id": 142,
+          "score": 8.6464,
+          "title": "Star Wars: Episode IV - A New Hope (1977)"
+        },
+        {
+          "rank": 5,
+          "item_id": 299,
+          "score": 8.545,
+          "title": "Schindler's List (1993)"
+        }
+      ],
+      "verifier": {
+        "passed": true,
+        "c1": true,
+        "c2": true,
+        "c3": true
+      },
+      "stored_status": "optimal",
+      "stored_size": 1,
+      "matches_stored_mask": true,
+      "kendall_retained": 0.6667
+    }
+  },
+  "entering": [
+    {
+      "rank": 5,
+      "item_id": 299,
+      "score": 8.545,
+      "title": "Schindler's List (1993)"
+    }
+  ],
+  "kendall_retained": 0.6667,
+  "retained_evidence": [
+    {
+      "item_id": 591,
+      "title": "Godfather: Part II, The (1974)",
+      "tau": 0.086315,
+      "surviving_path": {
+        "origin": 429,
+        "relation": "actor",
+        "relation_raw": "film.person_or_entity_appearing_in_film.film",
+        "via": "rehashed-entity-2339",
+        "contribution": 0.172631,
+        "origin_title": "Godfather, The (1972)"
+      }
+    },
+    {
+      "item_id": 177,
+      "title": "Shawshank Redemption, The (1994)",
+      "tau": 0.129473,
+      "surviving_path": {
+        "origin": 1474,
+        "relation": "actor",
+        "relation_raw": "film.person_or_entity_appearing_in_film.film",
+        "via": "rehashed-entity-3141",
+        "contribution": 0.258946,
+        "origin_title": "Insider, The (1999)"
+      }
+    },
+    {
+      "item_id": 142,
+      "title": "Star Wars: Episode IV - A New Hope (1977)",
+      "tau": 0.064737,
+      "surviving_path": {
+        "origin": 607,
+        "relation": "actor",
+        "relation_raw": "film.person_or_entity_appearing_in_film.film",
+        "via": "rehashed-entity-2349",
+        "contribution": 0.073985,
+        "origin_title": "Bridge on the River Kwai, The (1957)"
+      }
+    },
+    {
+      "item_id": 162,
+      "title": "Pulp Fiction (1994)",
+      "tau": 0.016184,
+      "surviving_path": {
+        "origin": 1349,
+        "relation": "actor",
+        "relation_raw": "film.person_or_entity_appearing_in_film.film",
+        "via": "rehashed-entity-1401",
+        "contribution": 0.032368,
+        "origin_title": "Sixth Sense, The (1999)"
+      }
+    }
+  ],
+  "enumeration": {
+    "ran": true,
+    "domain_size": 12,
+    "P_size": 1,
+    "Peps_size": 1,
+    "P_mask": [
+      575
+    ],
+    "Peps_mask": [
+      575
+    ]
+  },
+  "heuristic": {
+    "method": "greedy:target_score:c1_stop",
+    "stored": false,
+    "mask": [
+      {
+        "item_id": 575,
+        "title": "Star Wars: Episode V - The Empire Strikes Back (1980)"
+      }
+    ],
+    "c1": true,
+    "c2": true,
+    "c3": true,
+    "passed_setting_C": true,
+    "dropped": [],
+    "lost_evidence": []
+  },
+  "mismatches": [],
+  "entity_names": "unavailable in the rehashed Satori release"
+}
