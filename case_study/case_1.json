@@ -1,0 +1,4512 @@
+{
+  "kind": "success",
+  "dataset": "movielens-1m",
+  "user_id": 1098,
+  "history_length": 15,
+  "K": 10,
+  "alpha": 0.5,
+  "eps": 1e-06,
+  "entity_names": "unavailable: the Satori KG in this study is the rehashed RippleNet release, which stores integer ids only",
+  "history": [
+    {
+      "item_id": 214,
+      "title": "River Wild, The (1994)",
+      "year": 1994
+    },
+    {
+      "item_id": 268,
+      "title": "Jurassic Park (1993)",
+      "year": 1993
+    },
+    {
+      "item_id": 270,
+      "title": "Last Action Hero (1993)",
+      "year": 1993
+    },
+    {
+      "item_id": 277,
+      "title": "Executive Decision (1996)",
+      "year": 1996
+    },
+    {
+      "item_id": 576,
+      "title": "Princess Bride, The (1987)",
+      "year": 1987
+    },
+    {
+      "item_id": 673,
+      "title": "Mars Attacks! (1996)",
+      "year": 1996
+    },
+    {
+      "item_id": 693,
+      "title": "Dante's Peak (1997)",
+      "year": 1997
+    },
+    {
+      "item_id": 742,
+      "title": "Con Air (1997)",
+      "year": 1997
+    },
+    {
+      "item_id": 1253,
+      "title": "Matrix, The (1999)",
+      "year": 1999
+    },
+    {
+      "item_id": 1615,
+      "title": "Scream 3 (2000)",
+      "year": 2000
+    },
+    {
+      "item_id": 1616,
+      "title": "Single White Female (1992)",
+      "year": 1992
+    },
+    {
+      "item_id": 1627,
+      "title": "Whole Nine Yards, The (2000)",
+      "year": 2000
+    },
+    {
+      "item_id": 1753,
+      "title": "28 Days (2000)",
+      "year": 2000
+    },
+    {
+      "item_id": 1863,
+      "title": "Big Trouble in Little China (1986)",
+      "year": 1986
+    },
+    {
+      "item_id": 1908,
+      "title": "Nutty Professor II: The Klumps (2000)",
+      "year": 2000
+    }
+  ],
+  "original_topk": [
+    {
+      "rank": 1,
+      "item_id": 331,
+      "title": "Terminator 2: Judgment Day (1991)",
+      "score": 6.833281
+    },
+    {
+      "rank": 2,
+      "item_id": 659,
+      "title": "Die Hard 2 (1990)",
+      "score": 6.308484
+    },
+    {
+      "rank": 3,
+      "item_id": 765,
+      "title": "Hunt for Red October, The (1990)",
+      "score": 6.183305
+    },
+    {
+      "rank": 4,
+      "item_id": 216,
+      "title": "True Lies (1994)",
+      "score": 6.144401
+    },
+    {
+      "rank": 5,
+      "item_id": 602,
+      "title": "Terminator, The (1984)",
+      "score": 6.063566
+    },
+    {
+      "rank": 6,
+      "item_id": 575,
+      "title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+      "score": 6.014505
+    },
+    {
+      "rank": 7,
+      "item_id": 631,
+      "title": "Indiana Jones and the Last Crusade (1989)",
+      "score": 6.011308
+    },
+    {
+      "rank": 8,
+      "item_id": 948,
+      "title": "Lethal Weapon (1987)",
+      "score": 5.9329
+    },
+    {
+      "rank": 9,
+      "item_id": 497,
+      "title": "Die Hard (1988)",
+      "score": 5.905524
+    },
+    {
+      "rank": 10,
+      "item_id": 142,
+      "title": "Star Wars: Episode IV - A New Hope (1977)",
+      "score": 5.878036
+    }
+  ],
+  "top3_outsiders": [
+    {
+      "rank": 11,
+      "item_id": 577,
+      "title": "Raiders of the Lost Ark (1981)",
+      "score": 5.700856
+    },
+    {
+      "rank": 12,
+      "item_id": 1134,
+      "title": "Enemy of the State (1998)",
+      "score": 5.674569
+    },
+    {
+      "rank": 13,
+      "item_id": 585,
+      "title": "Star Wars: Episode VI - Return of the Jedi (1983)",
+      "score": 5.6724
+    }
+  ],
+  "target": {
+    "item_id": 497,
+    "title": "Die Hard (1988)",
+    "rank": 9
+  },
+  "settings": {
+    "A": {
+      "setting": "A",
+      "label": "C1",
+      "status": "optimal",
+      "runtime_s": 0.2813,
+      "mask": [
+        {
+          "item_id": 270,
+          "title": "Last Action Hero (1993)",
+          "year": 1993
+        },
+        {
+          "item_id": 1863,
+          "title": "Big Trouble in Little China (1986)",
+          "year": 1986
+        }
+      ],
+      "new_topk": [
+        {
+          "rank": 1,
+          "item_id": 331,
+          "title": "Terminator 2: Judgment Day (1991)",
+          "score": 5.650072
+        },
+        {
+          "rank": 2,
+          "item_id": 659,
+          "title": "Die Hard 2 (1990)",
+          "score": 5.347763
+        },
+        {
+          "rank": 3,
+          "item_id": 575,
+          "title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+          "score": 5.332486
+        },
+        {
+          "rank": 4,
+          "item_id": 216,
+          "title": "True Lies (1994)",
+          "score": 5.308572
+        },
+        {
+          "rank": 5,
+          "item_id": 602,
+          "title": "Terminator, The (1984)",
+          "score": 5.286366
+        },
+        {
+          "rank": 6,
+          "item_id": 142,
+          "title": "Star Wars: Episode IV - A New Hope (1977)",
+          "score": 5.263925
+        },
+        {
+          "rank": 7,
+          "item_id": 631,
+          "title": "Indiana Jones and the Last Crusade (1989)",
+          "score": 5.205646
+        },
+        {
+          "rank": 8,
+          "item_id": 948,
+          "title": "Lethal Weapon (1987)",
+          "score": 5.098083
+        },
+        {
+          "rank": 9,
+          "item_id": 765,
+          "title": "Hunt for Red October, The (1990)",
+          "score": 5.075261
+        },
+        {
+          "rank": 10,
+          "item_id": 1134,
+          "title": "Enemy of the State (1998)",
+          "score": 5.073988
+        }
+      ],
+      "entering": [
+        {
+          "rank": 10,
+          "item_id": 1134,
+          "title": "Enemy of the State (1998)",
+          "score": 5.073988
+        }
+      ],
+      "verifier_passed": true,
+      "matches_stored_status_and_size": true,
+      "matches_stored_mask": true,
+      "stored_status": "optimal",
+      "stored_size": 2,
+      "stored_runtime_s": 0.6789
+    },
+    "B": {
+      "setting": "B",
+      "label": "C1+C2",
+      "status": "optimal",
+      "runtime_s": 0.1428,
+      "mask": [
+        {
+          "item_id": 277,
+          "title": "Executive Decision (1996)",
+          "year": 1996
+        },
+        {
+          "item_id": 693,
+          "title": "Dante's Peak (1997)",
+          "year": 1997
+        }
+      ],
+      "new_topk": [
+        {
+          "rank": 1,
+          "item_id": 331,
+          "title": "Terminator 2: Judgment Day (1991)",
+          "score": 5.929607
+        },
+        {
+          "rank": 2,
+          "item_id": 765,
+          "title": "Hunt for Red October, The (1990)",
+          "score": 5.479682
+        },
+        {
+          "rank": 3,
+          "item_id": 575,
+          "title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+          "score": 5.475639
+        },
+        {
+          "rank": 4,
+          "item_id": 142,
+          "title": "Star Wars: Episode IV - A New Hope (1977)",
+          "score": 5.407948
+        },
+        {
+          "rank": 5,
+          "item_id": 631,
+          "title": "Indiana Jones and the Last Crusade (1989)",
+          "score": 5.39986
+        },
+        {
+          "rank": 6,
+          "item_id": 602,
+          "title": "Terminator, The (1984)",
+          "score": 5.336053
+        },
+        {
+          "rank": 7,
+          "item_id": 948,
+          "title": "Lethal Weapon (1987)",
+          "score": 5.304234
+        },
+        {
+          "rank": 8,
+          "item_id": 659,
+          "title": "Die Hard 2 (1990)",
+          "score": 5.295136
+        },
+        {
+          "rank": 9,
+          "item_id": 216,
+          "title": "True Lies (1994)",
+          "score": 5.238063
+        },
+        {
+          "rank": 10,
+          "item_id": 577,
+          "title": "Raiders of the Lost Ark (1981)",
+          "score": 5.218497
+        }
+      ],
+      "entering": [
+        {
+          "rank": 10,
+          "item_id": 577,
+          "title": "Raiders of the Lost Ark (1981)",
+          "score": 5.218497
+        }
+      ],
+      "verifier_passed": true,
+      "matches_stored_status_and_size": true,
+      "matches_stored_mask": true,
+      "stored_status": "optimal",
+      "stored_size": 2,
+      "stored_runtime_s": 0.5056
+    },
+    "C": {
+      "setting": "C",
+      "label": "C1+C2+C3",
+      "status": "optimal",
+      "runtime_s": 0.1331,
+      "mask": [
+        {
+          "item_id": 214,
+          "title": "River Wild, The (1994)",
+          "year": 1994
+        },
+        {
+          "item_id": 277,
+          "title": "Executive Decision (1996)",
+          "year": 1996
+        }
+      ],
+      "new_topk": [
+        {
+          "rank": 1,
+          "item_id": 331,
+          "title": "Terminator 2: Judgment Day (1991)",
+          "score": 6.060525
+        },
+        {
+          "rank": 2,
+          "item_id": 602,
+          "title": "Terminator, The (1984)",
+          "score": 5.549236
+        },
+        {
+          "rank": 3,
+          "item_id": 765,
+          "title": "Hunt for Red October, The (1990)",
+          "score": 5.45764
+        },
+        {
+          "rank": 4,
+          "item_id": 575,
+          "title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+          "score": 5.426303
+        },
+        {
+          "rank": 5,
+          "item_id": 142,
+          "title": "Star Wars: Episode IV - A New Hope (1977)",
+          "score": 5.375869
+        },
+        {
+          "rank": 6,
+          "item_id": 631,
+          "title": "Indiana Jones and the Last Crusade (1989)",
+          "score": 5.349645
+        },
+        {
+          "rank": 7,
+          "item_id": 216,
+          "title": "True Lies (1994)",
+          "score": 5.306431
+        },
+        {
+          "rank": 8,
+          "item_id": 659,
+          "title": "Die Hard 2 (1990)",
+          "score": 5.291984
+        },
+        {
+          "rank": 9,
+          "item_id": 948,
+          "title": "Lethal Weapon (1987)",
+          "score": 5.278312
+        },
+        {
+          "rank": 10,
+          "item_id": 585,
+          "title": "Star Wars: Episode VI - Return of the Jedi (1983)",
+          "score": 5.2064
+        }
+      ],
+      "entering": [
+        {
+          "rank": 10,
+          "item_id": 585,
+          "title": "Star Wars: Episode VI - Return of the Jedi (1983)",
+          "score": 5.2064
+        }
+      ],
+      "verifier_passed": true,
+      "matches_stored_status_and_size": true,
+      "matches_stored_mask": true,
+      "stored_status": "optimal",
+      "stored_size": 2,
+      "stored_runtime_s": 0.5041
+    }
+  },
+  "evidence": [
+    {
+      "item_id": 331,
+      "title": "Terminator 2: Judgment Day (1991)",
+      "tau": 0.069052,
+      "n_qualifying_paths": 5,
+      "paths": [
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "actor",
+          "relation_raw": "film.person_or_entity_appearing_in_film.film",
+          "via": "rehashed-entity-506",
+          "via_id": 506,
+          "entity_name_available": false,
+          "contribution": 0.138105,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "actor",
+          "relation_raw": "film.actor.film",
+          "via": "rehashed-entity-506",
+          "via_id": 506,
+          "entity_name_available": false,
+          "contribution": 0.138065,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "actor",
+          "relation_raw": "film.person_or_entity_appearing_in_film.film",
+          "via": "rehashed-entity-70",
+          "via_id": 70,
+          "entity_name_available": false,
+          "contribution": 0.103579,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "actor",
+          "relation_raw": "film.actor.film",
+          "via": "rehashed-entity-70",
+          "via_id": 70,
+          "entity_name_available": false,
+          "contribution": 0.103549,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "actor",
+          "relation_raw": "film.person_or_entity_appearing_in_film.film",
+          "via": "rehashed-entity-2429",
+          "via_id": 2429,
+          "entity_name_available": false,
+          "contribution": 0.069052,
+          "survives_under_C": true
+        }
+      ]
+    },
+    {
+      "item_id": 659,
+      "title": "Die Hard 2 (1990)",
+      "tau": 0.034526,
+      "n_qualifying_paths": 6,
+      "paths": [
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "actor",
+          "relation_raw": "film.person_or_entity_appearing_in_film.film",
+          "via": "rehashed-entity-2429",
+          "via_id": 2429,
+          "entity_name_available": false,
+          "contribution": 0.069052,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "actor",
+          "relation_raw": "film.actor.film",
+          "via": "rehashed-entity-2429",
+          "via_id": 2429,
+          "entity_name_available": false,
+          "contribution": 0.069033,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 742,
+          "origin_title": "Con Air (1997)",
+          "relation": "actor",
+          "relation_raw": "film.person_or_entity_appearing_in_film.film",
+          "via": "rehashed-entity-153",
+          "via_id": 153,
+          "entity_name_available": false,
+          "contribution": 0.046035,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 742,
+          "origin_title": "Con Air (1997)",
+          "relation": "actor",
+          "relation_raw": "film.actor.film",
+          "via": "rehashed-entity-153",
+          "via_id": 153,
+          "entity_name_available": false,
+          "contribution": 0.046022,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "actor",
+          "relation_raw": "film.person_or_entity_appearing_in_film.film",
+          "via": "rehashed-entity-587",
+          "via_id": 587,
+          "entity_name_available": false,
+          "contribution": 0.041431,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "actor",
+          "relation_raw": "film.actor.film",
+          "via": "rehashed-entity-587",
+          "via_id": 587,
+          "entity_name_available": false,
+          "contribution": 0.04142,
+          "survives_under_C": false
+        }
+      ]
+    },
+    {
+      "item_id": 765,
+      "title": "Hunt for Red October, The (1990)",
+      "tau": 0.103579,
+      "n_qualifying_paths": 2,
+      "paths": [
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "actor",
+          "relation_raw": "film.person_or_entity_appearing_in_film.film",
+          "via": "rehashed-entity-771",
+          "via_id": 771,
+          "entity_name_available": false,
+          "contribution": 0.207157,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "actor",
+          "relation_raw": "film.actor.film",
+          "via": "rehashed-entity-771",
+          "via_id": 771,
+          "entity_name_available": false,
+          "contribution": 0.207098,
+          "survives_under_C": true
+        }
+      ]
+    },
+    {
+      "item_id": 216,
+      "title": "True Lies (1994)",
+      "tau": 0.034526,
+      "n_qualifying_paths": 4,
+      "paths": [
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "actor",
+          "relation_raw": "film.person_or_entity_appearing_in_film.film",
+          "via": "rehashed-entity-2820",
+          "via_id": 2820,
+          "entity_name_available": false,
+          "contribution": 0.069052,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "actor",
+          "relation_raw": "film.actor.film",
+          "via": "rehashed-entity-2820",
+          "via_id": 2820,
+          "entity_name_available": false,
+          "contribution": 0.069033,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "actor",
+          "relation_raw": "film.person_or_entity_appearing_in_film.film",
+          "via": "rehashed-entity-2227",
+          "via_id": 2227,
+          "entity_name_available": false,
+          "contribution": 0.037665,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "actor",
+          "relation_raw": "film.actor.film",
+          "via": "rehashed-entity-2227",
+          "via_id": 2227,
+          "entity_name_available": false,
+          "contribution": 0.037654,
+          "survives_under_C": true
+        }
+      ]
+    },
+    {
+      "item_id": 602,
+      "title": "Terminator, The (1984)",
+      "tau": 0.051789,
+      "n_qualifying_paths": 4,
+      "paths": [
+        {
+          "origin_item_id": 673,
+          "origin_title": "Mars Attacks! (1996)",
+          "relation": "actor",
+          "relation_raw": "film.person_or_entity_appearing_in_film.film",
+          "via": "rehashed-entity-166",
+          "via_id": 166,
+          "entity_name_available": false,
+          "contribution": 0.103579,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "actor",
+          "relation_raw": "film.person_or_entity_appearing_in_film.film",
+          "via": "rehashed-entity-70",
+          "via_id": 70,
+          "entity_name_available": false,
+          "contribution": 0.103579,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 673,
+          "origin_title": "Mars Attacks! (1996)",
+          "relation": "actor",
+          "relation_raw": "film.actor.film",
+          "via": "rehashed-entity-166",
+          "via_id": 166,
+          "entity_name_available": false,
+          "contribution": 0.103549,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "actor",
+          "relation_raw": "film.actor.film",
+          "via": "rehashed-entity-70",
+          "via_id": 70,
+          "entity_name_available": false,
+          "contribution": 0.103549,
+          "survives_under_C": true
+        }
+      ]
+    },
+    {
+      "item_id": 575,
+      "title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+      "tau": 0.018832,
+      "n_qualifying_paths": 2,
+      "paths": [
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "actor",
+          "relation_raw": "film.person_or_entity_appearing_in_film.film",
+          "via": "rehashed-entity-354",
+          "via_id": 354,
+          "entity_name_available": false,
+          "contribution": 0.037665,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "actor",
+          "relation_raw": "film.actor.film",
+          "via": "rehashed-entity-354",
+          "via_id": 354,
+          "entity_name_available": false,
+          "contribution": 0.037654,
+          "survives_under_C": true
+        }
+      ]
+    },
+    {
+      "item_id": 631,
+      "title": "Indiana Jones and the Last Crusade (1989)",
+      "tau": 0.005546,
+      "n_qualifying_paths": 275,
+      "paths": [
+        {
+          "origin_item_id": 1908,
+          "origin_title": "Nutty Professor II: The Klumps (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 34,
+          "entity_name_available": false,
+          "contribution": 0.011092,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1908,
+          "origin_title": "Nutty Professor II: The Klumps (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 463,
+          "entity_name_available": false,
+          "contribution": 0.011092,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1908,
+          "origin_title": "Nutty Professor II: The Klumps (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 673,
+          "entity_name_available": false,
+          "contribution": 0.011092,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1908,
+          "origin_title": "Nutty Professor II: The Klumps (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 818,
+          "entity_name_available": false,
+          "contribution": 0.011092,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1908,
+          "origin_title": "Nutty Professor II: The Klumps (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1819,
+          "entity_name_available": false,
+          "contribution": 0.011092,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1908,
+          "origin_title": "Nutty Professor II: The Klumps (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1982,
+          "entity_name_available": false,
+          "contribution": 0.011092,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1908,
+          "origin_title": "Nutty Professor II: The Klumps (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3179,
+          "entity_name_available": false,
+          "contribution": 0.011092,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1908,
+          "origin_title": "Nutty Professor II: The Klumps (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3366,
+          "entity_name_available": false,
+          "contribution": 0.011092,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1908,
+          "origin_title": "Nutty Professor II: The Klumps (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3433,
+          "entity_name_available": false,
+          "contribution": 0.011092,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1908,
+          "origin_title": "Nutty Professor II: The Klumps (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3731,
+          "entity_name_available": false,
+          "contribution": 0.011092,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1908,
+          "origin_title": "Nutty Professor II: The Klumps (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3824,
+          "entity_name_available": false,
+          "contribution": 0.011092,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1908,
+          "origin_title": "Nutty Professor II: The Klumps (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3843,
+          "entity_name_available": false,
+          "contribution": 0.011092,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1908,
+          "origin_title": "Nutty Professor II: The Klumps (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4034,
+          "entity_name_available": false,
+          "contribution": 0.011092,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1908,
+          "origin_title": "Nutty Professor II: The Klumps (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 5230,
+          "entity_name_available": false,
+          "contribution": 0.011092,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 268,
+          "origin_title": "Jurassic Park (1993)",
+          "relation": "director",
+          "relation_raw": "film.director.film",
+          "via": "rehashed-entity-32",
+          "via_id": 32,
+          "entity_name_available": false,
+          "contribution": 0.010983,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 268,
+          "origin_title": "Jurassic Park (1993)",
+          "relation": "director",
+          "relation_raw": "film.film.director",
+          "via": "rehashed-entity-32",
+          "via_id": 32,
+          "entity_name_available": false,
+          "contribution": 0.010983,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 139,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 680,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 736,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 746,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1574,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1722,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1931,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1980,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2026,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2028,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2123,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2159,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2451,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2664,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2713,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3085,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3380,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3541,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3644,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3731,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3753,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3780,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3932,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4000,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4121,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4164,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4211,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4214,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4420,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 5318,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 5452,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 693,
+          "origin_title": "Dante's Peak (1997)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 5482,
+          "entity_name_available": false,
+          "contribution": 0.008869,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 20,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 139,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 184,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 510,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 539,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 675,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 896,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 950,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 994,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1578,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1683,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2026,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2084,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2159,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2400,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2606,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3065,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3644,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3731,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3760,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3773,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3780,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3855,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3977,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4199,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4240,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4313,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4762,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4899,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4917,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4954,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 5140,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 5201,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 270,
+          "origin_title": "Last Action Hero (1993)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 5482,
+          "entity_name_available": false,
+          "contribution": 0.008797,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 139,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 327,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 344,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 363,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 675,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 680,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 746,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1118,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1214,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1307,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1471,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1508,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1509,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1518,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1566,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1578,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1884,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1931,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1957,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2159,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2186,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2225,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2493,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2735,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2798,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3005,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3123,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3157,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3321,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3506,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3541,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3598,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3748,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3780,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3893,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3932,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3990,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4022,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4045,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4055,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4063,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4144,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4214,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4574,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4954,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 5053,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 214,
+          "origin_title": "River Wild, The (1994)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 5497,
+          "entity_name_available": false,
+          "contribution": 0.007107,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 187,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 430,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 491,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 675,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 680,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 697,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 886,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 961,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1378,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1541,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1566,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1578,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1702,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1760,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1833,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2042,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2048,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2054,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2296,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2417,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2460,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2560,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2606,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2827,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3157,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3179,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3247,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3254,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3347,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3380,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3433,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3815,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3819,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3824,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3932,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4004,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4093,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4460,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4534,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4664,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 5603,
+          "entity_name_available": false,
+          "contribution": 0.006962,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 157,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 187,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 344,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 724,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 804,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1279,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1435,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1519,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1547,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1578,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1669,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1819,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1912,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2827,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2935,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3007,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3059,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3085,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3760,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3815,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4022,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4202,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4422,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4519,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 5009,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 5201,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 5275,
+          "entity_name_available": false,
+          "contribution": 0.00676,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1753,
+          "origin_title": "28 Days (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 139,
+          "entity_name_available": false,
+          "contribution": 0.006605,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1753,
+          "origin_title": "28 Days (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 142,
+          "entity_name_available": false,
+          "contribution": 0.006605,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1753,
+          "origin_title": "28 Days (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 408,
+          "entity_name_available": false,
+          "contribution": 0.006605,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1753,
+          "origin_title": "28 Days (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 655,
+          "entity_name_available": false,
+          "contribution": 0.006605,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1753,
+          "origin_title": "28 Days (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 721,
+          "entity_name_available": false,
+          "contribution": 0.006605,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1753,
+          "origin_title": "28 Days (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1029,
+          "entity_name_available": false,
+          "contribution": 0.006605,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1753,
+          "origin_title": "28 Days (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1118,
+          "entity_name_available": false,
+          "contribution": 0.006605,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1753,
+          "origin_title": "28 Days (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1279,
+          "entity_name_available": false,
+          "contribution": 0.006605,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1753,
+          "origin_title": "28 Days (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1541,
+          "entity_name_available": false,
+          "contribution": 0.006605,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1753,
+          "origin_title": "28 Days (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1547,
+          "entity_name_available": false,
+          "contribution": 0.006605,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1753,
+          "origin_title": "28 Days (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1595,
+          "entity_name_available": false,
+          "contribution": 0.006605,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1753,
+          "origin_title": "28 Days (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1669,
+          "entity_name_available": false,
+          "contribution": 0.006605,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1753,
+          "origin_title": "28 Days (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1931,
+          "entity_name_available": false,
+          "contribution": 0.006605,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1753,
+          "origin_title": "28 Days (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2124,
+          "entity_name_available": false,
+          "contribution": 0.006605,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1753,
+          "origin_title": "28 Days (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2672,
+          "entity_name_available": false,
+          "contribution": 0.006605,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1753,
+          "origin_title": "28 Days (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3321,
+          "entity_name_available": false,
+          "contribution": 0.006605,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1753,
+          "origin_title": "28 Days (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3380,
+          "entity_name_available": false,
+          "contribution": 0.006605,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1753,
+          "origin_title": "28 Days (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3469,
+          "entity_name_available": false,
+          "contribution": 0.006605,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1753,
+          "origin_title": "28 Days (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3541,
+          "entity_name_available": false,
+          "contribution": 0.006605,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1753,
+          "origin_title": "28 Days (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3700,
+          "entity_name_available": false,
+          "contribution": 0.006605,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1753,
+          "origin_title": "28 Days (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4350,
+          "entity_name_available": false,
+          "contribution": 0.006605,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1753,
+          "origin_title": "28 Days (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4675,
+          "entity_name_available": false,
+          "contribution": 0.006605,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1753,
+          "origin_title": "28 Days (2000)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4713,
+          "entity_name_available": false,
+          "contribution": 0.006605,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 139,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 157,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 161,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 179,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 189,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 195,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 278,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 445,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 510,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 680,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 724,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 757,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1343,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1413,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1453,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1566,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1620,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1634,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1650,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1889,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 1982,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2026,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2048,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2159,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2289,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2460,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2571,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2606,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 2664,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3048,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3301,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3380,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3477,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3506,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3628,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3635,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3750,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3815,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3819,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3824,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3975,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 3990,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4032,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4144,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4164,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4201,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 4675,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 5140,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 5166,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 5318,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 5452,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 5482,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 5537,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 5590,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        },
+        {
+          "origin_item_id": 277,
+          "origin_title": "Executive Decision (1996)",
+          "relation": "collaborative",
+          "relation_raw": "co",
+          "via": "co-user",
+          "via_id": 5617,
+          "entity_name_available": false,
+          "contribution": 0.005897,
+          "survives_under_C": false
+        }
+      ]
+    },
+    {
+      "item_id": 948,
+      "title": "Lethal Weapon (1987)",
+      "tau": 0.069052,
+      "n_qualifying_paths": 2,
+      "paths": [
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "actor",
+          "relation_raw": "film.person_or_entity_appearing_in_film.film",
+          "via": "rehashed-entity-2655",
+          "via_id": 2655,
+          "entity_name_available": false,
+          "contribution": 0.138105,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1616,
+          "origin_title": "Single White Female (1992)",
+          "relation": "actor",
+          "relation_raw": "film.actor.film",
+          "via": "rehashed-entity-2655",
+          "via_id": 2655,
+          "entity_name_available": false,
+          "contribution": 0.138065,
+          "survives_under_C": true
+        }
+      ]
+    },
+    {
+      "item_id": 142,
+      "title": "Star Wars: Episode IV - A New Hope (1977)",
+      "tau": 0.018832,
+      "n_qualifying_paths": 2,
+      "paths": [
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "actor",
+          "relation_raw": "film.person_or_entity_appearing_in_film.film",
+          "via": "rehashed-entity-354",
+          "via_id": 354,
+          "entity_name_available": false,
+          "contribution": 0.037665,
+          "survives_under_C": true
+        },
+        {
+          "origin_item_id": 1615,
+          "origin_title": "Scream 3 (2000)",
+          "relation": "actor",
+          "relation_raw": "film.actor.film",
+          "via": "rehashed-entity-354",
+          "via_id": 354,
+          "entity_name_available": false,
+          "contribution": 0.037654,
+          "survives_under_C": true
+        }
+      ]
+    }
+  ],
+  "target_evidence_top5": [
+    {
+      "origin_item_id": 270,
+      "origin_title": "Last Action Hero (1993)",
+      "relation": "director",
+      "relation_raw": "film.director.film",
+      "via": "rehashed-entity-334",
+      "via_id": 334,
+      "entity_name_available": false,
+      "contribution": 0.030751,
+      "survives_under_C": true,
+      "removed_by_mask": false,
+      "removed_by_setting": "C"
+    },
+    {
+      "origin_item_id": 270,
+      "origin_title": "Last Action Hero (1993)",
+      "relation": "director",
+      "relation_raw": "film.film.director",
+      "via": "rehashed-entity-334",
+      "via_id": 334,
+      "entity_name_available": false,
+      "contribution": 0.030751,
+      "survives_under_C": true,
+      "removed_by_mask": false,
+      "removed_by_setting": "C"
+    },
+    {
+      "origin_item_id": 1627,
+      "origin_title": "Whole Nine Yards, The (2000)",
+      "relation": "actor",
+      "relation_raw": "film.person_or_entity_appearing_in_film.film",
+      "via": "rehashed-entity-1401",
+      "via_id": 1401,
+      "entity_name_available": false,
+      "contribution": 0.025895,
+      "survives_under_C": true,
+      "removed_by_mask": false,
+      "removed_by_setting": "C"
+    },
+    {
+      "origin_item_id": 1627,
+      "origin_title": "Whole Nine Yards, The (2000)",
+      "relation": "actor",
+      "relation_raw": "film.actor.film",
+      "via": "rehashed-entity-1401",
+      "via_id": 1401,
+      "entity_name_available": false,
+      "contribution": 0.025887,
+      "survives_under_C": true,
+      "removed_by_mask": false,
+      "removed_by_setting": "C"
+    },
+    {
+      "origin_item_id": 1908,
+      "origin_title": "Nutty Professor II: The Klumps (2000)",
+      "relation": "collaborative",
+      "relation_raw": "co",
+      "via": "co-user",
+      "via_id": 34,
+      "entity_name_available": false,
+      "contribution": 0.011134,
+      "survives_under_C": true,
+      "removed_by_mask": false,
+      "removed_by_setting": "C"
+    }
+  ],
+  "score_decomposition": {
+    "mask_setting": "C",
+    "target": {
+      "item_id": 497,
+      "title": "Die Hard (1988)",
+      "top": [
+        {
+          "item_id": 1253,
+          "title": "Matrix, The (1999)",
+          "A_ij_before": 0.744589,
+          "A_ij_after": 0.744589,
+          "masked": false
+        },
+        {
+          "item_id": 576,
+          "title": "Princess Bride, The (1987)",
+          "A_ij_before": 0.710286,
+          "A_ij_after": 0.710286,
+          "masked": false
+        },
+        {
+          "item_id": 268,
+          "title": "Jurassic Park (1993)",
+          "A_ij_before": 0.680122,
+          "A_ij_after": 0.680122,
+          "masked": false
+        },
+        {
+          "item_id": 742,
+          "title": "Con Air (1997)",
+          "A_ij_before": 0.523459,
+          "A_ij_after": 0.523459,
+          "masked": false
+        },
+        {
+          "item_id": 1863,
+          "title": "Big Trouble in Little China (1986)",
+          "A_ij_before": 0.505866,
+          "A_ij_after": 0.505866,
+          "masked": false
+        },
+        {
+          "item_id": 277,
+          "title": "Executive Decision (1996)",
+          "A_ij_before": 0.428064,
+          "A_ij_after": 0.0,
+          "masked": true
+        },
+        {
+          "item_id": 214,
+          "title": "River Wild, The (1994)",
+          "A_ij_before": 0.29436,
+          "A_ij_after": 0.0,
+          "masked": true
+        }
+      ]
+    },
+    "retained": [
+      {
+        "item_id": 331,
+        "title": "Terminator 2: Judgment Day (1991)",
+        "top": [
+          {
+            "item_id": 1253,
+            "title": "Matrix, The (1999)",
+            "A_ij_before": 0.970591,
+            "A_ij_after": 0.970591,
+            "masked": false
+          },
+          {
+            "item_id": 268,
+            "title": "Jurassic Park (1993)",
+            "A_ij_before": 0.879734,
+            "A_ij_after": 0.879734,
+            "masked": false
+          },
+          {
+            "item_id": 270,
+            "title": "Last Action Hero (1993)",
+            "A_ij_before": 0.749896,
+            "A_ij_after": 0.749896,
+            "masked": false
+          },
+          {
+            "item_id": 576,
+            "title": "Princess Bride, The (1987)",
+            "A_ij_before": 0.656277,
+            "A_ij_after": 0.656277,
+            "masked": false
+          },
+          {
+            "item_id": 742,
+            "title": "Con Air (1997)",
+            "A_ij_before": 0.528511,
+            "A_ij_after": 0.528511,
+            "masked": false
+          },
+          {
+            "item_id": 277,
+            "title": "Executive Decision (1996)",
+            "A_ij_before": 0.491798,
+            "A_ij_after": 0.0,
+            "masked": true
+          },
+          {
+            "item_id": 214,
+            "title": "River Wild, The (1994)",
+            "A_ij_before": 0.280958,
+            "A_ij_after": 0.0,
+            "masked": true
+          }
+        ]
+      },
+      {
+        "item_id": 659,
+        "title": "Die Hard 2 (1990)",
+        "top": [
+          {
+            "item_id": 742,
+            "title": "Con Air (1997)",
+            "A_ij_before": 0.788955,
+            "A_ij_after": 0.788955,
+            "masked": false
+          },
+          {
+            "item_id": 277,
+            "title": "Executive Decision (1996)",
+            "A_ij_before": 0.665233,
+            "A_ij_after": 0.0,
+            "masked": true
+          },
+          {
+            "item_id": 1253,
+            "title": "Matrix, The (1999)",
+            "A_ij_before": 0.597853,
+            "A_ij_after": 0.597853,
+            "masked": false
+          },
+          {
+            "item_id": 268,
+            "title": "Jurassic Park (1993)",
+            "A_ij_before": 0.580442,
+            "A_ij_after": 0.580442,
+            "masked": false
+          },
+          {
+            "item_id": 270,
+            "title": "Last Action Hero (1993)",
+            "A_ij_before": 0.496152,
+            "A_ij_after": 0.496152,
+            "masked": false
+          },
+          {
+            "item_id": 1863,
+            "title": "Big Trouble in Little China (1986)",
+            "A_ij_before": 0.46457,
+            "A_ij_after": 0.46457,
+            "masked": false
+          },
+          {
+            "item_id": 214,
+            "title": "River Wild, The (1994)",
+            "A_ij_before": 0.351268,
+            "A_ij_after": 0.0,
+            "masked": true
+          }
+        ]
+      },
+      {
+        "item_id": 765,
+        "title": "Hunt for Red October, The (1990)",
+        "top": [
+          {
+            "item_id": 1253,
+            "title": "Matrix, The (1999)",
+            "A_ij_before": 0.775879,
+            "A_ij_after": 0.775879,
+            "masked": false
+          },
+          {
+            "item_id": 268,
+            "title": "Jurassic Park (1993)",
+            "A_ij_before": 0.773342,
+            "A_ij_after": 0.773342,
+            "masked": false
+          },
+          {
+            "item_id": 270,
+            "title": "Last Action Hero (1993)",
+            "A_ij_before": 0.691513,
+            "A_ij_after": 0.691513,
+            "masked": false
+          },
+          {
+            "item_id": 576,
+            "title": "Princess Bride, The (1987)",
+            "A_ij_before": 0.594665,
+            "A_ij_after": 0.594665,
+            "masked": false
+          },
+          {
+            "item_id": 742,
+            "title": "Con Air (1997)",
+            "A_ij_before": 0.535834,
+            "A_ij_after": 0.535834,
+            "masked": false
+          },
+          {
+            "item_id": 277,
+            "title": "Executive Decision (1996)",
+            "A_ij_before": 0.450146,
+            "A_ij_after": 0.0,
+            "masked": true
+          },
+          {
+            "item_id": 214,
+            "title": "River Wild, The (1994)",
+            "A_ij_before": 0.275519,
+            "A_ij_after": 0.0,
+            "masked": true
+          }
+        ]
+      },
+      {
+        "item_id": 216,
+        "title": "True Lies (1994)",
+        "top": [
+          {
+            "item_id": 742,
+            "title": "Con Air (1997)",
+            "A_ij_before": 0.660172,
+            "A_ij_after": 0.660172,
+            "masked": false
+          },
+          {
+            "item_id": 268,
+            "title": "Jurassic Park (1993)",
+            "A_ij_before": 0.655379,
+            "A_ij_after": 0.655379,
+            "masked": false
+          },
+          {
+            "item_id": 1253,
+            "title": "Matrix, The (1999)",
+            "A_ij_before": 0.628396,
+            "A_ij_after": 0.628396,
+            "masked": false
+          },
+          {
+            "item_id": 277,
+            "title": "Executive Decision (1996)",
+            "A_ij_before": 0.46797,
+            "A_ij_after": 0.0,
+            "masked": true
+          },
+          {
+            "item_id": 576,
+            "title": "Princess Bride, The (1987)",
+            "A_ij_before": 0.453291,
+            "A_ij_after": 0.453291,
+            "masked": false
+          },
+          {
+            "item_id": 1616,
+            "title": "Single White Female (1992)",
+            "A_ij_before": 0.452095,
+            "A_ij_after": 0.452095,
+            "masked": false
+          },
+          {
+            "item_id": 214,
+            "title": "River Wild, The (1994)",
+            "A_ij_before": 0.37,
+            "A_ij_after": 0.0,
+            "masked": true
+          }
+        ]
+      },
+      {
+        "item_id": 602,
+        "title": "Terminator, The (1984)",
+        "top": [
+          {
+            "item_id": 1253,
+            "title": "Matrix, The (1999)",
+            "A_ij_before": 0.871912,
+            "A_ij_after": 0.871912,
+            "masked": false
+          },
+          {
+            "item_id": 576,
+            "title": "Princess Bride, The (1987)",
+            "A_ij_before": 0.73375,
+            "A_ij_after": 0.73375,
+            "masked": false
+          },
+          {
+            "item_id": 268,
+            "title": "Jurassic Park (1993)",
+            "A_ij_before": 0.727955,
+            "A_ij_after": 0.727955,
+            "masked": false
+          },
+          {
+            "item_id": 673,
+            "title": "Mars Attacks! (1996)",
+            "A_ij_before": 0.59771,
+            "A_ij_after": 0.59771,
+            "masked": false
+          },
+          {
+            "item_id": 1863,
+            "title": "Big Trouble in Little China (1986)",
+            "A_ij_before": 0.489964,
+            "A_ij_after": 0.489964,
+            "masked": false
+          },
+          {
+            "item_id": 742,
+            "title": "Con Air (1997)",
+            "A_ij_before": 0.431222,
+            "A_ij_after": 0.431222,
+            "masked": false
+          },
+          {
+            "item_id": 277,
+            "title": "Executive Decision (1996)",
+            "A_ij_before": 0.32869,
+            "A_ij_after": 0.0,
+            "masked": true
+          },
+          {
+            "item_id": 214,
+            "title": "River Wild, The (1994)",
+            "A_ij_before": 0.18564,
+            "A_ij_after": 0.0,
+            "masked": true
+          }
+        ]
+      },
+      {
+        "item_id": 575,
+        "title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+        "top": [
+          {
+            "item_id": 1253,
+            "title": "Matrix, The (1999)",
+            "A_ij_before": 0.931012,
+            "A_ij_after": 0.931012,
+            "masked": false
+          },
+          {
+            "item_id": 576,
+            "title": "Princess Bride, The (1987)",
+            "A_ij_before": 0.877475,
+            "A_ij_after": 0.877475,
+            "masked": false
+          },
+          {
+            "item_id": 268,
+            "title": "Jurassic Park (1993)",
+            "A_ij_before": 0.83107,
+            "A_ij_after": 0.83107,
+            "masked": false
+          },
+          {
+            "item_id": 742,
+            "title": "Con Air (1997)",
+            "A_ij_before": 0.432742,
+            "A_ij_after": 0.432742,
+            "masked": false
+          },
+          {
+            "item_id": 1863,
+            "title": "Big Trouble in Little China (1986)",
+            "A_ij_before": 0.429831,
+            "A_ij_after": 0.429831,
+            "masked": false
+          },
+          {
+            "item_id": 673,
+            "title": "Mars Attacks! (1996)",
+            "A_ij_before": 0.42967,
+            "A_ij_after": 0.42967,
+            "masked": false
+          },
+          {
+            "item_id": 277,
+            "title": "Executive Decision (1996)",
+            "A_ij_before": 0.344086,
+            "A_ij_after": 0.0,
+            "masked": true
+          },
+          {
+            "item_id": 214,
+            "title": "River Wild, The (1994)",
+            "A_ij_before": 0.244117,
+            "A_ij_after": 0.0,
+            "masked": true
+          }
+        ]
+      },
+      {
+        "item_id": 631,
+        "title": "Indiana Jones and the Last Crusade (1989)",
+        "top": [
+          {
+            "item_id": 576,
+            "title": "Princess Bride, The (1987)",
+            "A_ij_before": 0.790437,
+            "A_ij_after": 0.790437,
+            "masked": false
+          },
+          {
+            "item_id": 268,
+            "title": "Jurassic Park (1993)",
+            "A_ij_before": 0.770788,
+            "A_ij_after": 0.770788,
+            "masked": false
+          },
+          {
+            "item_id": 1253,
+            "title": "Matrix, The (1999)",
+            "A_ij_before": 0.731029,
+            "A_ij_after": 0.731029,
+            "masked": false
+          },
+          {
+            "item_id": 1863,
+            "title": "Big Trouble in Little China (1986)",
+            "A_ij_before": 0.504852,
+            "A_ij_after": 0.504852,
+            "masked": false
+          },
+          {
+            "item_id": 742,
+            "title": "Con Air (1997)",
+            "A_ij_before": 0.48075,
+            "A_ij_after": 0.48075,
+            "masked": false
+          },
+          {
+            "item_id": 673,
+            "title": "Mars Attacks! (1996)",
+            "A_ij_before": 0.421653,
+            "A_ij_after": 0.421653,
+            "masked": false
+          },
+          {
+            "item_id": 277,
+            "title": "Executive Decision (1996)",
+            "A_ij_before": 0.325936,
+            "A_ij_after": 0.0,
+            "masked": true
+          },
+          {
+            "item_id": 214,
+            "title": "River Wild, The (1994)",
+            "A_ij_before": 0.335728,
+            "A_ij_after": 0.0,
+            "masked": true
+          }
+        ]
+      },
+      {
+        "item_id": 948,
+        "title": "Lethal Weapon (1987)",
+        "top": [
+          {
+            "item_id": 576,
+            "title": "Princess Bride, The (1987)",
+            "A_ij_before": 0.65285,
+            "A_ij_after": 0.65285,
+            "masked": false
+          },
+          {
+            "item_id": 268,
+            "title": "Jurassic Park (1993)",
+            "A_ij_before": 0.638575,
+            "A_ij_after": 0.638575,
+            "masked": false
+          },
+          {
+            "item_id": 1253,
+            "title": "Matrix, The (1999)",
+            "A_ij_before": 0.605764,
+            "A_ij_after": 0.605764,
+            "masked": false
+          },
+          {
+            "item_id": 1616,
+            "title": "Single White Female (1992)",
+            "A_ij_before": 0.575013,
+            "A_ij_after": 0.575013,
+            "masked": false
+          },
+          {
+            "item_id": 742,
+            "title": "Con Air (1997)",
+            "A_ij_before": 0.528579,
+            "A_ij_after": 0.528579,
+            "masked": false
+          },
+          {
+            "item_id": 1863,
+            "title": "Big Trouble in Little China (1986)",
+            "A_ij_before": 0.520513,
+            "A_ij_after": 0.520513,
+            "masked": false
+          },
+          {
+            "item_id": 277,
+            "title": "Executive Decision (1996)",
+            "A_ij_before": 0.399454,
+            "A_ij_after": 0.0,
+            "masked": true
+          },
+          {
+            "item_id": 214,
+            "title": "River Wild, The (1994)",
+            "A_ij_before": 0.255134,
+            "A_ij_after": 0.0,
+            "masked": true
+          }
+        ]
+      },
+      {
+        "item_id": 142,
+        "title": "Star Wars: Episode IV - A New Hope (1977)",
+        "top": [
+          {
+            "item_id": 1253,
+            "title": "Matrix, The (1999)",
+            "A_ij_before": 0.939731,
+            "A_ij_after": 0.939731,
+            "masked": false
+          },
+          {
+            "item_id": 576,
+            "title": "Princess Bride, The (1987)",
+            "A_ij_before": 0.851522,
+            "A_ij_after": 0.851522,
+            "masked": false
+          },
+          {
+            "item_id": 268,
+            "title": "Jurassic Park (1993)",
+            "A_ij_before": 0.81366,
+            "A_ij_after": 0.81366,
+            "masked": false
+          },
+          {
+            "item_id": 673,
+            "title": "Mars Attacks! (1996)",
+            "A_ij_before": 0.471926,
+            "A_ij_after": 0.471926,
+            "masked": false
+          },
+          {
+            "item_id": 742,
+            "title": "Con Air (1997)",
+            "A_ij_before": 0.435188,
+            "A_ij_after": 0.435188,
+            "masked": false
+          },
+          {
+            "item_id": 1863,
+            "title": "Big Trouble in Little China (1986)",
+            "A_ij_before": 0.396907,
+            "A_ij_after": 0.396907,
+            "masked": false
+          },
+          {
+            "item_id": 277,
+            "title": "Executive Decision (1996)",
+            "A_ij_before": 0.297066,
+            "A_ij_after": 0.0,
+            "masked": true
+          },
+          {
+            "item_id": 214,
+            "title": "River Wild, The (1994)",
+            "A_ij_before": 0.2051,
+            "A_ij_after": 0.0,
+            "masked": true
+          }
+        ]
+      }
+    ]
+  },
+  "mismatches": []
+}

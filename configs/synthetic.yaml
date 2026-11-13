@@ -1,0 +1,14 @@
+# Small generated dataset for tests, CI and the smoke experiment (no download).
+seed: 0
+dataset:
+  name: synthetic
+  synthetic: {n_users: 60, n_items: 80, n_groups: 4, n_creators: 25, mean_history: 14, seed: 0}
+model:
+  path: models/synthetic/path_additive.npz
+  collaborative: true
+  bpr_samples: 20000
+evaluation: {ks: [10, 20]}
+baselines:
+  itemknn_k: [null, 20]
+  bprmf: {dim: 16, lr: 0.05, reg: 1.0e-4, max_epochs: 20, eval_every: 5, patience: 2}
+results_dir: results/synthetic

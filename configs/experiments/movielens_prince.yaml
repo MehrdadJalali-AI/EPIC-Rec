@@ -1,0 +1,4 @@
+# PRINCE (official code, pinned commit) on its native personalised-PageRank recommender, top-1 targets.
+base: ../movielens.yaml
+experiment: {name: prince, kind: prince, output_dir: results/movielens-1m/prince, K: [10]}
+prince: {alpha: 0.15, epsilon: 1.0e-6, users_per_stratum: 10}

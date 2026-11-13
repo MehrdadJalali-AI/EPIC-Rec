@@ -1,0 +1,16 @@
+# Evidence-threshold sensitivity: relative strength alpha and absolute floor phi (C3 only depends on them).
+base: ../movielens.yaml
+experiment:
+  name: threshold
+  output_dir: results/movielens-1m/threshold
+  users_per_stratum: 25
+  user_seed: 3
+  K: [10]
+  alpha: [0.25, 0.5, 0.75, 1.0]
+  phi: [0.0]
+  eps: [1.0e-6]
+  ranks: all
+  settings: [C]
+  methods: [{name: exact}]
+  time_limit: 20
+  workers: 4

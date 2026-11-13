@@ -1,0 +1,18 @@
+# environments
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.DS_Store
+
+# data: never committed (see docs/data.md for download instructions)
+data/*
+!data/README.md
+
+# trained models and generated results (regenerate with the commands in README.md)
+/models/
+results/*
+!results/README.md

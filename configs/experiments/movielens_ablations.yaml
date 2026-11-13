@@ -1,0 +1,23 @@
+# Ablations: no C2 (setting A3 = C1 + C3), no C3 (setting B), no repair, random vs learned initialisation.
+base: ../movielens.yaml
+experiment:
+  name: ablations
+  output_dir: results/movielens-1m/ablations
+  users_per_stratum: 25
+  user_seed: 5
+  K: [10]
+  alpha: [0.5]
+  phi: [0.0]
+  eps: [1.0e-6]
+  ranks: all
+  settings: [A, A3, B, C]
+  methods:
+    - {name: exact}
+    - {name: continuous, relaxation: sigmoid, init: attribution, repair: true}
+    - {name: continuous, relaxation: sigmoid, init: attribution, repair: false}
+    - {name: continuous, relaxation: sigmoid, init: random, repair: true}
+    - {name: continuous, relaxation: sigmoid, init: random, repair: false}
+    - {name: greedy, criterion: target_score}
+    - {name: greedy, criterion: random}
+  time_limit: 20
+  workers: 4
